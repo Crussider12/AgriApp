@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/margin12"
+    android:layout_margin="@dimen/margin8"
+    android:id="@+id/day_wind"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/margin30"
+        android:layout_height="@dimen/margin30"
+        android:src="@drawable/ic_wind"
+        android:scaleType="fitCenter"
+        android:id="@+id/wind_im"/>
+
+    <agri.app.Customviews.HelveticaNeuBoldTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEMP"
+        android:id="@+id/wind_temp"/>
+
+    <agri.app.Customviews.HelveticaNeuBoldTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TIME"
+        android:id="@+id/wind_time"/>
+</LinearLayout>

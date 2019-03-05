@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    tools:context=".registrationFragmentModule.RegistrationFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="@dimen/margin24"
+            android:layout_marginEnd="@dimen/margin4"
+            android:layout_marginBottom="@dimen/margin46"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin4">
+
+            <agri.app.Customviews.HelveticaNeuBoldTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registration"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size36" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end">
+
+                <ImageView
+                    android:layout_width="@dimen/margin36"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_close_black_24dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reg"
+            android:orientation="vertical">
+
+
+
+            <!--Full Name-->
+            <LinearLayout
+                android:id="@+id/name_parts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/margin16"
+                    android:paddingTop="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin16"
+                    android:paddingBottom="@dimen/margin2">
+
+                    <agri.app.Customviews.HelveticaNeuRegularEditText
+                        android:id="@+id/reg_input_uname_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/first_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="25"
+                        android:textColor="@color/gray_dark"
+                        android:textColorHint="@color/gray_dark" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/margin16"
+                    android:paddingTop="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin16"
+                    android:paddingBottom="@dimen/margin2">
+
+                    <agri.app.Customviews.HelveticaNeuRegularEditText
+                        android:id="@+id/reg_input_uname_last"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/last_name"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLength="25"
+                        android:textColor="@color/gray_dark"
+                        android:textColorHint="@color/gray_dark" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <!--Gender-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16">
+
+                <agri.app.Customviews.HelveticaNeuBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin2"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:text="@string/gender"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="@dimen/text_size20" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/reg_gender_male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:elevation="@dimen/margin4"
+                        android:text="@string/male"
+                        android:textColor="@color/gray_dark" />
+
+                    <Button
+                        android:id="@+id/reg_gender_female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:elevation="@dimen/margin4"
+                        android:text="@string/female"
+                        android:textColor="@color/gray_dark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Age-->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16"
+                android:paddingBottom="@dimen/margin2">
+
+                <agri.app.Customviews.HelveticaNeuRegularEditText
+                    android:id="@+id/reg_input_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/age_"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/gray_dark"
+                    android:textColorHint="@color/gray_light" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--Contact-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:orientation="horizontal">
+
+                <agri.app.Customviews.HelveticaNeuBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="@dimen/margin20"
+                    android:text="@string/_91"
+                    android:textColor="@color/gray_dark"
+                    android:textSize="@dimen/text_size20" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin16"
+                    android:paddingTop="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin16"
+                    android:paddingBottom="@dimen/margin2">
+
+                    <agri.app.Customviews.HelveticaNeuRegularEditText
+                        android:id="@+id/reg_input_contact_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/contact_number"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textColor="@color/gray_dark"
+                        android:textColorHint="@color/gray_light" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <!--Gmail-->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16"
+                android:paddingBottom="@dimen/margin2">
+
+                <agri.app.Customviews.HelveticaNeuRegularEditText
+                    android:id="@+id/reg_input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/gmail"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="25"
+                    android:textColor="@color/gray_dark"
+                    android:textColorHint="@color/gray_light" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!--Password-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin16"
+                    android:paddingTop="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin16"
+                    android:paddingBottom="@dimen/margin2"
+                    app:passwordToggleEnabled="true">
+
+                    <agri.app.Customviews.HelveticaNeuRegularEditText
+                        android:id="@+id/reg_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLength="10"
+                        android:textColor="@color/gray_dark"
+                        android:textColorHint="@color/gray_light" />
+
+                </android.support.design.widget.TextInputLayout>
+           </LinearLayout>
+
+            <!-- password while matching-->
+            <LinearLayout
+                android:id="@+id/pass_ver_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin24"
+                    android:paddingStart="@dimen/margin16"
+                    android:paddingTop="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin16"
+                    android:paddingBottom="@dimen/margin2">
+
+                    <agri.app.Customviews.HelveticaNeuRegularEditText
+                        android:id="@+id/reg_confirm_pass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/confirm_password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+                        android:maxLength="10"
+                        android:textColor="@color/gray_dark"
+                        android:textColorHint="@color/gray_light" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Land Area-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:paddingStart="@dimen/margin16"
+                    android:paddingTop="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin2"
+                    android:paddingBottom="@dimen/margin2">
+
+                    <agri.app.Customviews.HelveticaNeuRegularEditText
+                        android:id="@+id/reg_land_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/land_size_area"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/gray_dark"
+                        android:textColorHint="@color/gray_light" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/unit_spin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:layout_marginTop="@dimen/margin16"
+                    android:layout_marginEnd="@dimen/margin16">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!-- Previous Area Crop-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin16"
+                android:layout_marginTop="@dimen/margin30"
+                android:layout_marginEnd="@dimen/margin16"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start"
+                    android:autoSizePresetSizes="12dp"
+                    android:hint="@string/previous_year_crops">
+
+                </AutoCompleteTextView>
+
+
+
+            </LinearLayout>
+            <!-- Irrigation Type-->
+            <agri.app.Customviews.HelveticaNeuBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16"
+                android:paddingBottom="@dimen/margin16"
+                android:text="@string/type_of_irrigation"
+                android:textSize="@dimen/text_size20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin16"
+                android:layout_marginTop="@dimen/margin24"
+                android:layout_marginEnd="@dimen/margin16"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/reg_iri_pump"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:text="@string/pump"
+                    android:textColor="@color/gray_dark" />
+
+                <Button
+                    android:id="@+id/reg_iri_canal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:text="@string/canal"
+                    android:textColor="@color/gray_dark" />
+
+                <Button
+                    android:id="@+id/reg_iri_drip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:text="@string/drip"
+                    android:textColor="@color/gray_dark" />
+
+                <Button
+                    android:id="@+id/reg_iri_sprin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:text="@string/sprinkler"
+                    android:textColor="@color/gray_dark" />
+
+            </LinearLayout>
+
+            <!-- Mandi Preference-->
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16"
+                android:paddingBottom="@dimen/margin2">
+
+                <agri.app.Customviews.HelveticaNeuRegularEditText
+                    android:id="@+id/reg_mandi_preference"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/mandi_preference"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLength="10"
+                    android:textColor="@color/gray_dark"
+                    android:textColorHint="@color/gray_light" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Mechanisation-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16"
+                android:paddingBottom="@dimen/margin16">
+
+                <agri.app.Customviews.HelveticaNeuBoldTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/mechanisation"
+                    android:textSize="@dimen/text_size20" />
+
+
+                <Button
+                    android:id="@+id/reg_mech_own"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_border"
+                    android:text="@string/own"
+                    android:textColor="@color/gray_dark" />
+
+                <Button
+                    android:id="@+id/reg_mech_rent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-1dp"
+                    android:background="@drawable/button_border"
+                    android:text="@string/rent"
+                    android:textColor="@color/gray_dark" />
+            </LinearLayout>
+
+            <!--own mech-->
+            <LinearLayout
+                android:id="@+id/reg_mech_size_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin24"
+                android:paddingStart="@dimen/margin16"
+                android:paddingTop="@dimen/margin2"
+                android:paddingEnd="@dimen/margin16"
+                android:paddingBottom="@dimen/margin16"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <agri.app.Customviews.HelveticaNeuBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="@string/owned"
+                    android:paddingTop="@dimen/margin8"
+                    android:paddingStart="16dp"
+                    android:layout_gravity="center"
+                    android:paddingEnd="16dp"
+                    android:textSize="@dimen/text_size20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/reg_mech_own_high"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:text="@string/high"
+                        android:textColor="@color/gray_dark" />
+
+                    <Button
+                        android:id="@+id/reg_mech_own_med"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="-1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:text="@string/medium"
+                        android:textColor="@color/gray_dark" />
+
+                    <Button
+                        android:id="@+id/reg_mech_own_low"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="-1dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/button_border"
+                        android:text="@string/small"
+                        android:textColor="@color/gray_dark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/user_regist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin36"
+                android:layout_marginEnd="@dimen/margin36"
+                android:layout_marginTop="@dimen/margin40"
+                android:layout_marginBottom="@dimen/margin40"
+                android:onClick="RegLog"
+                android:padding="@dimen/margin16"
+                android:background="@drawable/logreg_borders"
+                android:elevation="@dimen/margin8"
+                android:textSize="@dimen/text_size18"
+                android:textColor="@color/white"
+                android:text="@string/register" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>

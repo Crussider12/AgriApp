@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/margin16"
+    android:backgroundTint="@color/app_background"
+    app:cardCornerRadius="-1dp"
+    android:id="@+id/list_item">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_margin="@dimen/margin4"
+        android:orientation="vertical">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/margin120"
+        android:layout_height="@dimen/margin120"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/margin1"
+        android:padding="@dimen/margin16"
+        android:elevation="@dimen/margin10"
+        android:id="@+id/image"
+        android:src="@mipmap/ic_launcher"/>
+
+    <agri.app.Customviews.HelveticaNeuRegularTextView
+        android:id="@+id/image_name"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/fruit"
+        android:textSize="@dimen/text_size16" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

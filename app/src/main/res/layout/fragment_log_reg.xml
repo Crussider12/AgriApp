@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".logRegFragmentModule.LogRegFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/logreg"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/user_login_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="LoginHome"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_18sdp"
+                android:textColor="@color/white"
+                android:background="@drawable/logreg_borders"
+                android:textSize="@dimen/_14ssp"
+                android:elevation="@dimen/_4ssp"
+                android:text="@string/login" />
+
+
+            <Button
+                android:id="@+id/user_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="RegistrationHome"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/logreg_borders"
+                android:elevation="@dimen/_4sdp"
+                android:textSize="@dimen/_14ssp"
+                android:text="@string/registration" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

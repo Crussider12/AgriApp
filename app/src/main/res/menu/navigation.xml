@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/bottom_nav_home"
+        android:icon="@mipmap/home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/bottom_nav_mall"
+        android:icon="@mipmap/mall"
+        android:title="@string/bottom_nav_mall" />
+
+    <item
+        android:id="@+id/bottom_nav_crop"
+        android:icon="@mipmap/crop"
+        android:title="@string/bottom_nav_crop" />
+
+    <item
+        android:id="@+id/bottom_nav_mandi"
+        android:icon="@mipmap/marketprice"
+        android:title="@string/bottom_nav_mandi" />
+
+    <item
+        android:id="@+id/bottom_nav_support"
+        android:icon="@mipmap/advice"
+        android:title="@string/bottom_nav_support" />
+
+</menu>

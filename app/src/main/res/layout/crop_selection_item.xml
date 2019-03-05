@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/crop_selection_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin4"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/margin8">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/crop_selection_image"
+            android:layout_width="@dimen/margin120"
+            android:layout_height="@dimen/margin120"
+            android:layout_margin="@dimen/margin1"
+            android:padding="@dimen/margin4"
+            android:elevation="@dimen/margin10"
+
+            android:src="@mipmap/ic_launcher" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/crop_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin76"
+            android:elevation="@dimen/margin16"
+            android:src="@drawable/ic_dot"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <agri.app.Customviews.HelveticaNeuRegularTextView
+        android:id="@+id/crop_selection_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/fruit"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size16" />
+</LinearLayout>

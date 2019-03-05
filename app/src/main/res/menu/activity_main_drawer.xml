@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group
+        android:id="@+id/first"
+        android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/nav_wishlist"
+            android:icon="@mipmap/wish"
+            android:title="@string/nav_wishlist" />
+
+
+        <item
+            android:id="@+id/nav_myorder"
+            android:icon="@mipmap/myorders"
+            android:title="@string/nav_myorder" />
+
+    </group>
+    <group
+        android:id="@+id/second"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_wallet"
+            android:icon="@mipmap/wallet"
+            android:title="@string/nav_wallet" />
+        <item
+            android:id="@+id/nav_loan"
+            android:icon="@mipmap/loan"
+            android:title="@string/nav_loan" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@mipmap/setting"
+            android:title="@string/nav_settings" />
+
+
+    </group>
+
+    <group
+        android:id="@+id/dummy"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_contact_us"
+            android:title="@string/nav_contact_us" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:title="@string/nav_about_us" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/nav_logout" />
+
+
+    </group>
+
+</menu>

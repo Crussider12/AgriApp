@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_checked="true"
+        android:color="#29DDC3" />
+
+    <item
+        android:state_checked="false"
+        android:color="@color/gray" />
+<!--
+    <item
+        android:name="Home"
+        android:state_checked="true"
+        android:color="#BEDD13" />
+
+
+    <item
+        android:name="Home"
+        android:state_checked="false"
+        android:color="@color/gray" />
+
+-->
+
+
+
+
+</selector>

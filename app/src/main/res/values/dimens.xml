@@ -1,0 +1,143 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="card_padding">40dp</dimen>
+
+    <dimen name="margin80">100dp</dimen>
+    <dimen name="margin90">112.5dp</dimen>
+    <dimen name="margin150">187.5dp</dimen>
+    <dimen name="margin160">200dp</dimen>
+    <dimen name="margin180">225dp</dimen>
+    <dimen name="margin200">250dp</dimen>
+    <dimen name="margin240">300dp</dimen>
+    <dimen name="margin300">375dp</dimen>
+    <dimen name="margin400">500dp</dimen>
+    <dimen name="input_button_width">36dp</dimen>
+    <dimen name="input_button_height">36dp</dimen>
+    <dimen name="input_button_margin">16dp</dimen>
+    <dimen name="input_text_size">17sp</dimen>
+    <dimen name="input_padding_left">16sp</dimen>
+    <dimen name="input_padding_right">16sp</dimen>
+    <dimen name="input_padding_top">8sp</dimen>
+    <dimen name="input_padding_bottom">8sp</dimen>
+    <dimen name="margin5">5dp</dimen>
+    <dimen name="text_size8">8sp</dimen>
+    <dimen name="text_size10">10sp</dimen>
+    <dimen name="text_size12">12sp</dimen>
+    <dimen name="text_size15">14sp</dimen>
+    <dimen name="text_size15new">15sp</dimen>
+
+    <dimen name="text_size18">18sp</dimen>
+    <dimen name="text_size20">20sp</dimen>
+    <dimen name="text_size25">25sp</dimen>
+    <dimen name="text_size30">30sp</dimen>
+
+    <dimen name="margin1">1dp</dimen>
+    <dimen name="margin3">3dp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin18">18dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin12">12dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="margin25">25dp</dimen>
+    <dimen name="margin30">30dp</dimen>
+    <dimen name="margin40">40dp</dimen>
+    <dimen name="margin45">45dp</dimen>
+    <dimen name="margin60">60dp</dimen>
+    <dimen name="margin61">70dp</dimen>
+    <dimen name="margin65">65dp</dimen>
+    <dimen name="margin35">35dp</dimen>
+    <dimen name="margin100">100dp</dimen>
+    <dimen name="margin110">110dp</dimen>
+    <dimen name="margin120">120dp</dimen>
+    <dimen name="margin130">130dp</dimen>
+    <dimen name="margin140">140dp</dimen>
+    <dimen name="message_bubble_corners_radius">15dp</dimen>
+
+    <dimen name="dialog_avatar_width">56dp</dimen>
+    <dimen name="dialog_avatar_height">56dp</dimen>
+    <dimen name="dialog_last_message_avatar_width">24dp</dimen>
+    <dimen name="dialog_last_message_avatar_height">24dp</dimen>
+    <dimen name="dialog_title_text_size">18sp</dimen>
+    <dimen name="dialog_message_text_size">16sp</dimen>
+    <dimen name="dialog_date_text_size">14sp</dimen>
+    <dimen name="dialog_unread_bubble_text_size">13sp</dimen>
+    <dimen name="dialog_divider_margin_left">88dp</dimen>
+    <dimen name="dialog_divider_margin_right">0dp</dimen>
+
+    <dimen name="message_avatar_width">40dp</dimen>
+    <dimen name="message_avatar_height">40dp</dimen>
+    <dimen name="message_padding_left">16dp</dimen>
+    <dimen name="message_padding_right">16dp</dimen>
+    <dimen name="message_padding_top">16dp</dimen>
+    <dimen name="message_padding_bottom">16dp</dimen>
+    <dimen name="message_text_size">17sp</dimen>
+    <dimen name="message_time_text_size">14sp</dimen>
+    <dimen name="message_date_header_text_size">16sp</dimen>
+    <dimen name="message_date_header_padding">16dp</dimen>
+    <dimen name="message_incoming_bubble_margin_right">40dp</dimen>
+    <dimen name="message_outcoming_bubble_margin_left">88dp</dimen>
+
+    <dimen name="bottom_sheet_dialog_padding">10dp</dimen>
+    <dimen name="bottom_sheet_text_size">16sp</dimen>
+    <dimen name="bottom_sheet_grid_spacing">16dp</dimen>
+    <dimen name="bottom_sheet_grid_padding">24dp</dimen>
+    <dimen name="bottom_sheet_list_padding">8dp</dimen>
+    <dimen name="bottom_sheet_width">0dp</dimen>
+
+    <dimen name="card_margin">12dp</dimen>
+
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_short">8dp</dimen>
+    <dimen name="margin_extra_short">4dp</dimen>
+
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <dimen name="toolbar_margin_start">72dp</dimen>
+    <dimen name="flexible_space_height">72dp</dimen>
+    <dimen name="flexible_space_image_height">240dp</dimen>
+    <dimen name="flexible_space_show_fab_offset">120dp</dimen>
+
+    <dimen name="parallax_image_height">180dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+
+    <dimen name="header_bar_height">72dp</dimen>
+    <dimen name="intersection_height">16dp</dimen>
+
+    <dimen name="sliding_slop">32dp</dimen>
+    <dimen name="sliding_overlay_blur_size">4dp</dimen>
+    <dimen name="margin4">4dp</dimen>
+    <dimen name="margin6dp">6dp</dimen>
+    <dimen name="margin160dp">160dp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin36">36dp</dimen>
+    <dimen name="text_size36">36sp</dimen>
+    <dimen name="text_size24">24sp</dimen>
+    <dimen name="margin200dp">200dp</dimen>
+    <dimen name="margin70">70dp</dimen>
+    <dimen name="margin2">2dp</dimen>
+    <dimen name="text_size16">16sp</dimen>
+    <dimen name="margin32">32dp</dimen>
+    <dimen name="margin24">24dp</dimen>
+    <dimen name="margin22">22dp</dimen>
+    <dimen name="margin150dp">150dp</dimen>
+    <dimen name="margin7">7dp</dimen>
+    <dimen name="size80">80dp</dimen>
+    <dimen name="margin46">46dp</dimen>
+    <dimen name="margin50">50dp</dimen>
+    <dimen name="textSize26">26sp</dimen>
+    <dimen name="margin0">0dp</dimen>
+    <dimen name="margin180dp">180dp</dimen>
+    <dimen name="text_size46">46sp</dimen>
+    <dimen name="margin76">76dp</dimen>
+    <dimen name="text_size14">14sp</dimen>
+
+    <!--Text Sizes for different-->
+</resources>

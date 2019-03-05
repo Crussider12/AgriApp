@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_16sdp"
+    android:orientation="vertical">
+
+    <agri.app.Customviews.HelveticaNeuRegularEditText
+        android:id="@+id/crop_farm_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/farm_name"
+        android:inputType="textEmailAddress" />
+
+    <agri.app.Customviews.HelveticaNeuRegularEditText
+        android:id="@+id/crop_farm_sow_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/date_of_sowing"
+        android:inputType="textPassword" />
+
+    <agri.app.Customviews.HelveticaNeuRegularEditText
+        android:id="@+id/crop_farm_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:hint="@string/area_under_total_cultivation"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/button_background_reg"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+</LinearLayout>

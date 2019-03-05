@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mandi_home"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/margin200dp"
+    android:layout_margin="@dimen/margin12"
+    android:paddingBottom="@dimen/margin16"
+    app:cardCornerRadius="@dimen/margin4"
+    app:cardElevation="@dimen/margin4">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/mandi_card_arrow_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@drawable/ic_left_arrow"
+            android:baselineAlignBottom="true"
+            android:layout_marginStart="@dimen/margin12"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_mandi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin36"
+        android:layout_marginTop="@dimen/margin16"
+        android:layout_marginEnd="@dimen/margin36"
+        android:layout_marginBottom="@dimen/margin16"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginStart="@dimen/margin12"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin30"
+            android:textAlignment="center">
+
+            <agri.app.Customviews.HelveticaNeuBoldTextView
+
+                android:id="@+id/mandi_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/temp_mandi"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size24" />
+
+            <agri.app.Customviews.HelveticaNeuRegularTextView
+                android:id="@+id/mandi_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/temp_price"
+                android:textColor="@color/black" />
+
+            <agri.app.Customviews.HelveticaNeuRegularTextView
+                android:id="@+id/mandi_item_dist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/temp_dist"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/mandi_item_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tomato" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/mandi_card_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@drawable/ic_right_arrow"
+            android:baselineAlignBottom="true"
+            android:layout_marginEnd="@dimen/margin12"
+            android:visibility="visible" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:weightSum="1">
+
+        <agri.app.Customviews.HelveticaNeuBoldTextView
+            android:id="@+id/mandi_card_details"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/margin16"
+            android:layout_marginBottom="@dimen/margin12"
+            android:textColor="@color/gray_dark"
+            android:layout_height="wrap_content"
+            android:baselineAlignBottom="true"
+            android:text="@string/details"
+            android:visibility="visible" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+
+

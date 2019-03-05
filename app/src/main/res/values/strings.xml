@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">AgriApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="bottom_nav_mall">Mall</string>
+    <string name="bottom_nav_crop">Crop</string>
+    <string name="add">Add</string>
+
+    <string name="bottom_nav_support">Support</string>
+    <string name="bottom_nav_mandi">Mandi</string>
+    <string name="nav_myorder">My Orders</string>
+    <string name="nav_loan">Loan</string>
+    <string name="nav_wallet">Wallet</string>
+    <string name="nav_wishlist">Wishlist</string>
+
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_contact_us">Contact Us</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="nav_logout">LOGOUT</string>
+    <string name="user_name">USER NAME</string>
+    <string name="contact_number">Contact Number*</string>
+    <string name="full_name">Full Name</string>
+    <string name="address">Address</string>
+    <string name="gmail">Gmail</string>
+    <string name="land_size_area">Land Size Area*</string>
+    <string name="fruit">Fruit</string>
+    <string name="gender">Gender*</string>
+    <string name="age">D.O.B</string>
+    <string name="language">Language</string>
+    <string name="fertilizers">Fertilizers</string>
+    <string name="seeds">Seeds</string>
+    <string name="pesticides">Pesticides</string>
+    <string name="hardware">Hardware</string>
+    <string name="pgr">PGR</string>
+    <string name="other">Other</string>
+    <string name="crop_selection">Crop Selection</string>
+    <string name="notification">Notification</string>
+    <string name="password">Password*</string>
+    <string name="temperory"> 32°c</string>
+    <string name="Temp_weather">Clear Weather</string>
+    <string name="temp_time">Afternoon</string>
+    <string name="todo">TODO</string>
+    <string name="save_details">Save Details</string>
+    <string name="temp_dist">Distance: 1.8Km</string>
+    <string name="temp_price">Price: 300</string>
+    <string name="temp_mandi">Mandi: Sangvi</string>
+    <string name="home_veg_details">Details</string>
+    <string name="temp_humidity">Humidity: 26%</string>
+    <string name="temp_percip">Percipitation: 0%</string>
+    <string name="temp_wind">Wind: 5km/h</string>
+    <string name="details_mandi_item">Details</string>
+    <string name="details">Details</string>
+    <string name="temp_veg">Tomato</string>
+    <string name="login">Login</string>
+    <string name="registration">Registration</string>
+    <string name="APP_NAME">AGGAIN</string>
+    <string name="connect_create_gain">Connect. Create. Gain.</string>
+    <string name="remember_me">Remember me</string>
+    <string name="first_name">First Name*</string>
+    <string name="last_name">Last Name*</string>
+
+    <string name="male">male</string>
+    <string name="female">Female</string>
+    <string name="previous_year_crops">Previous Year Crops</string>
+    <string name="type_of_irrigation">Type of Irrigation*</string>
+    <string name="pump">Pump</string>
+    <string name="canal">Canal</string>
+    <string name="drip">Drip</string>
+    <string name="sprinkler">Sprinkler</string>
+    <string name="mandi_preference">Mandi Preference</string>
+    <string name="mechanisation">Mechanization*</string>
+    <string name="own">Own</string>
+    <string name="rent">Rent</string>
+    <string name="owned">Owned*</string>
+    <string name="high">High</string>
+    <string name="medium">Medium</string>
+    <string name="small">Small</string>
+    <string name="_91">+91</string>
+    <string name="age_">Age*</string>
+    <string name="unit">Unit</string>
+    <string name="register">Register</string>
+    <string name="item_name">Item Name</string>
+    <string name="size_1_l">Size: 1 L</string>
+    <string name="price_300_rs">Price:300 Rs</string>
+    <string name="add_to_bag">Add to Bag</string>
+    <string name="total_production">Total Production</string>
+    <string name="pesticides_used">Pesticides Used</string>
+    <string name="accountability">Accountability</string>
+    <string name="crop_name">Tomato</string>
+    <string name="pest_used">Pest Used</string>
+    <string name="my_farm">My Farm</string>
+    <string name="calendar">Calendar</string>
+    <string name="diary">Diary</string>
+    <string name="farm_name">Farm Name</string>
+    <string name="variety">Variety</string>
+    <string name="s_o_d">S.O.D</string>
+    <string name="confirm_password">Confirm Password*</string>
+    <string name="setting">Setting</string>
+    <string name="search">Search</string>
+    <string name="hint">Search</string>
+    <string name="tomato_summary">The tomato is the edible, often red, berry of the nightshade Solanum lycopersicum, commonly known as a tomato plant.</string>
+    <string name="requirements">Requirements</string>
+    <string name="ecpected_yield">Ecpected Yield:</string>
+    <string name="finance">Finance</string>
+    <string name="cancel">Cancel</string>
+    <string name="expected_profit">Expected Profit:</string>
+    <string name="expected_cost">Expected Cost:</string>
+    <string name="expected_scale">Expected Scale:</string>
+    <string name="expected_rate">Expected Rate:</string>
+    <string name="_430_mton">430 Mton</string>
+    <string name="_600_rs_kg">600 Rs/Kg</string>
+    <string name="_2_6_lakh_rs">2.6 Lakh Rs</string>
+    <string name="_600_rs">Rs 600</string>
+    <string name="rs_60">Rs 60</string>
+    <string name="_5000_liters">5000 Liters</string>
+    <string name="irrigation">Irrigation</string>
+
+    //calender
+    <string name="item1">Tomato</string>
+    <string name="item2">Grapes</string>
+    <string name="item3">Apple</string>
+    <string name="item4">Beans</string>
+    <string name="item5">Spinach</string>
+
+    <string-array name="Convert_Type">
+        <item>@string/item1</item>
+        <item>@string/item2</item>
+        <item>@string/item3</item>
+        <item>@string/item4</item>
+        <item>@string/item5</item>
+
+    </string-array>
+    <string name="detail_data">In the Middle Ages, both in the Islamic world and in Europe,
+    agriculture was transformed with improved techniques and the diffusion of crop plants,
+    including the introduction of sugar, rice, cotton and fruit trees such as the orange to
+    Europe by way of Al-Andalus.[64][65] After 1492, the Columbian exchange brought New World crops
+    such as maize, potatoes, tomatoes, sweet potatoes and manioc to Europe, and Old World crops such as wheat,
+    barley, rice and turnips, and livestock including horses, cattle, sheep and goats to the Americas.[66] Irrigation,
+    crop rotation, and fertilizers advanced beginning in the 19th century, triggered by the British Agricultural Revolution,
+    allowing global population to rise significantly. Since 1900, agriculture in developed nations, and to a lesser extent in
+    the developing world, has seen large rises in productivity as human labor was replaced by mechanization,
+    and assisted by synthetic fertilizers, pesticides, and selective breeding.</string>
+    <string name="rice">rice</string>
+
+    <string name="area_under_total_cultivation">Area under total cultivation</string>
+    <string name="date_of_sowing">Date of Sowing</string>
+
+</resources>

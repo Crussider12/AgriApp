@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".settingsFragmentModule.SettingsFragment">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_margin="@dimen/margin4"
+      android:padding="@dimen/margin4"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <agri.app.Customviews.HelveticaNeuBoldTextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/white"
+          android:layout_marginBottom="@dimen/margin5"
+          android:elevation="@dimen/margin4"
+          android:clickable="true"
+          android:focusable="true"
+          android:padding="@dimen/margin18"
+          android:text="@string/crop_selection" />
+
+      <agri.app.Customviews.HelveticaNeuBoldTextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/white"
+          android:layout_marginBottom="@dimen/margin5"
+          android:clickable="true"
+          android:elevation="@dimen/margin4"
+          android:focusable="true"
+          android:padding="@dimen/margin18"
+          android:text="@string/notification" />
+
+      <agri.app.Customviews.HelveticaNeuBoldTextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/white"
+          android:layout_marginBottom="@dimen/margin5"
+          android:clickable="true"
+          android:elevation="@dimen/margin4"
+          android:focusable="true"
+          android:padding="@dimen/margin18"
+          android:text="@string/password" />
+  </LinearLayout>
+</FrameLayout>

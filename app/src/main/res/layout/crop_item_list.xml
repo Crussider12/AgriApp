@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/crop_home"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/margin200dp"
+    android:layout_margin="@dimen/margin12"
+    android:paddingBottom="@dimen/margin16"
+    app:cardCornerRadius="@dimen/margin4"
+    app:cardElevation="@dimen/margin4">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/crop_card_arrow_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginStart="@dimen/margin12"
+            android:background="@drawable/ic_left_arrow"
+            android:baselineAlignBottom="true"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_mandi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin36"
+        android:layout_marginTop="@dimen/margin16"
+        android:layout_marginEnd="@dimen/margin36"
+        android:layout_marginBottom="@dimen/margin16"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/crop_item_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tomato" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginStart="@dimen/margin12"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin16"
+            android:textAlignment="center">
+
+            <agri.app.Customviews.HelveticaNeuBoldTextView
+
+                android:id="@+id/crop_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/crop_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size24" />
+
+            <agri.app.Customviews.HelveticaNeuRegularTextView
+                android:id="@+id/crop_item_farm_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/farm_name"
+                android:textColor="@color/black" />
+
+            <agri.app.Customviews.HelveticaNeuRegularTextView
+                android:id="@+id/crop_item_variety"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/variety"
+                android:textColor="@color/black" />
+
+            <agri.app.Customviews.HelveticaNeuRegularTextView
+                android:id="@+id/crop_item_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/land_size_area"
+                android:textColor="@color/black" />
+
+            <agri.app.Customviews.HelveticaNeuRegularTextView
+                android:id="@+id/crop_item_sod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:hint="@string/s_o_d"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/crop_card_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginEnd="@dimen/margin12"
+            android:background="@drawable/ic_right_arrow"
+            android:baselineAlignBottom="true"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

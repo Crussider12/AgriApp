@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+    tools:context=".profileFragmentModule.ProfileFragment">
+
+
+    <ScrollView
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/header_cover_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin120"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile_background" />
+
+                <ImageView
+                    android:id="@+id/close"
+                    android:layout_width="@dimen/margin32"
+                    android:layout_height="@dimen/margin32"
+                    android:layout_marginStart="@dimen/margin24"
+                    android:layout_marginTop="@dimen/margin32"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/ic_arrow_back_black_24dp"
+                    android:elevation="@dimen/margin6dp" />
+
+
+                <ImageButton
+                    android:id="@+id/user_profile_photo"
+                    android:layout_width="@dimen/margin120"
+                    android:layout_height="@dimen/margin120"
+                    android:layout_below="@+id/header_cover_image"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/border"
+                    android:elevation="@dimen/margin8"
+                    android:padding="@dimen/margin16"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profilepic" />
+
+                <RelativeLayout
+                    android:id="@+id/profile_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header_cover_image"
+                    android:background="@color/white"
+                    android:paddingStart="@dimen/margin2"
+                    android:paddingEnd="@dimen/margin2"
+                    android:paddingBottom="@dimen/margin2">
+
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:id="@+id/user_profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin140"
+                        android:layout_marginBottom="@dimen/margin22"
+                        android:text="@string/full_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size20"
+                        android:textStyle="normal|italic" />
+                    <ImageView
+                        android:layout_width="@dimen/margin50"
+                        android:layout_height="@dimen/margin30"
+                        android:background="@color/white"
+                        android:layout_marginStart="@dimen/margin16"
+                        android:paddingStart="@dimen/margin20"
+                        android:paddingEnd="@dimen/margin20"
+                        android:layout_marginTop="@dimen/margin150dp"
+                        android:scaleType="centerCrop"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/edit_details"
+                        android:src="@drawable/profile_editing_new_blueish"/>
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin2"
+                    android:layout_below="@+id/profile_layout"
+                    android:orientation="vertical">
+
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/margin18"
+                        android:text="@string/contact_number" />
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:padding="@dimen/margin18"
+                        android:text="@string/gmail" />
+
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/margin18"
+                        android:text="@string/gender" />
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/margin18"
+                        android:text="@string/age" />
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:focusable="true"
+                        android:padding="@dimen/margin18"
+                        android:text="@string/address" />
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/margin18"
+                        android:text="@string/land_size_area" />
+
+                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin5"
+                        android:background="@color/white"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/margin16"
+                        android:text="@string/language" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7cab3e</color>
+    <color name="colorPrimaryDark">#3B5323</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white1">#e8e8e8</color>
+    <color name="line_bg">#C3C3C3</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="button_bg">#656F6F</color>
+    <color name="button_text">#FFFFFF</color>
+    <color name="button_text_dark">#656F6F</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="fontSize">#629FD2</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorHintText">#C3C3C3</color>
+    <color name="bottom_selected_text">#2EA29E</color>
+    <color name="transparent_bg">#00000000</color>
+    <!--<color name="header_home">#FF1460B6</color>-->
+    <!--<color name="header_home">#2980b9</color>-->
+    <color name="header_home">#2F7EB8</color>
+    <color name="heading_theme_dark">#1468bf</color>
+    <color name="heading_theme_light">#2980b9</color>
+    <color name="text_theme_navy_blue">#1468bf</color>
+
+    <color name="btn_theme_light">#2980b9</color>
+    <color name="btn_theme_dark">#296d99</color>
+
+    <color name="blue_button_light">#2980b9</color>
+    <color name="blue_button_dark">#296d99</color>
+    <color name="text_theme_orange">#296d99</color>
+    <color name="text_theme_white">#fff</color>
+    <color name="text_theme_black">#000000</color>
+
+    <color name="QRCodeBlackColor">#000000</color>
+    <color name="QRCodeWhiteColor">#ffffff</color>
+    <color name="gray_theme">#807f7f</color>
+    <color name="gray_themechat">#aaaaaa</color>
+
+
+    <!--<color name="header_home">#002f64</color>
+    <color name="heading_theme_blue">#002f64</color>
+    <color name="heading_theme_light">#0464fe</color>
+    <color name="blue_button_light">#72a4f5</color>
+    <color name="blue_button_dark">#048bfe</color>
+    <color name="text_theme_navy_blue">#2095a5</color>
+    <color name="gray_theme">#807f7f</color>-->
+
+    <color name="edit_text_color">#404040</color>
+
+    <color name="orange">#fd8312</color>
+    <color name="facebook_button">#1b2b8a</color>
+    <color name="gray_remember_me">#7a7a7b</color>
+    <color name="background">#D9D9D9</color>
+    <color name="green_navy">#058E84</color>
+    <color name="view_background">#DADADC</color>
+    <color name="header">#D9418b0b</color>
+    <color name="gray">#999999</color>
+
+    <color name="grayios">#777777</color>
+    <color name="white">#fff</color>
+    <color name="black">#000000</color>
+    <color name="progress_bar_background">#e8e8e8</color>
+    <color name="white2">#d3d2d5</color>
+    <color name="white3">#d9d9d9</color>
+    <color name="green1">#8abe4d</color>
+    <color name="orange_trans">#55fd8312</color>
+    <color name="orange_dark_trans">#B3d81111</color>
+    <color name="green_light">#418b0b</color>
+    <color name="grey1">#808080</color>
+    <color name="red_light">#f77665</color>
+    <color name="blue">#2583e5</color>
+    <color name="blue_theme_dark_shadow">#102746</color>
+    <color name="white_trans_new">#80FFFFFF</color>
+
+    <color name="blue1">#1c4985</color>
+    <color name="blue2">#163969</color>
+
+
+    <color name="transparent_light_white">#80FFFFFF</color>
+    <color name="transparent_light_black">#40000000</color>
+    <color name="full_transparent">#00000000</color>
+    <color name="theme_transparent">#D92980b9</color>
+    <color name="transparent_dark50">#B3000000</color>
+    <color name="transparent_dark80">#CC000000</color>
+    <color name="transparent_dark85">#D9000000</color>
+    <color name="transparent_dark70">#B3000000</color>
+    <color name="transparent2">#55d9d9d9</color>
+    <color name="grey_transparent">#8Ca5a4a4</color>
+    <color name="white_transparent">#8Cffffff</color>
+    <color name="white_transparent2">#E6ffffff</color>
+    <color name="white_transparent3">#66ffffff</color>
+    <color name="white_transparent_light">#D9ffffff</color>
+    <color name="splash_transparent">#CC000000</color>
+    <color name="text_box_boundary">#DBDBDB</color>
+    <color name="white_trans_new2">#80ffffff</color>
+
+    <color name="sample_dark_red">#c21515</color>
+    <color name="white60">#a0ffffff</color>
+    <color name="white_two">#efefef</color>
+    <color name="white_three">#ebebeb</color>
+    <color name="white_four">#e0e0e0</color>
+    <color name="white_five">#dadada</color>
+    <color name="dark_gray">#282a2b</color>
+    <color name="dark_grey_two">#191a1b</color>
+    <color name="warm_grey">#7f7f7f</color>
+    <color name="warm_grey_two">#9c9c9c</color>
+    <color name="warm_grey_three">#8b8b8b</color>
+    <color name="warm_grey_four">#979797</color>
+    <color name="dark_mint">#51c05c</color>
+    <color name="cornflower_blue_two_24">#3d4f62d7</color>
+    <color name="cornflower_blue_light_40">#64bec5f7</color>
+
+    <color name="dialog_divider">@color/white_three</color>
+    <color name="dialog_title_text">@color/dark_gray</color>
+    <color name="dialog_message_text">@color/warm_grey</color>
+    <color name="dialog_date_text">@color/warm_grey_two</color>
+    <color name="dialog_unread_text">@color/white</color>
+    <color name="dialog_unread_bubble">@color/dark_mint</color>
+
+    <color name="gray_light">#e8e8e8</color>
+    <color name="gray_transparent">#a6efefef</color>
+    <color name="gray_dark">#858585</color>
+    <color name="gray_dark_transparent">#ae858585</color>
+    <color name="gray_darkest">#ae282828</color>
+    <color name="black_10">#19000000</color>
+    <color name="ivory">#f8efe6</color>
+    <color name="ivory_dark">#f7e8d9</color>
+    <color name="green">#38be55</color>
+    <color name="green_dark">#2da346</color>
+    <color name="brown">#4e342e</color>
+
+    <color name="black_35">#59000000</color>
+    <color name="black_55">#8C000000</color>
+    <color name="black_85">#D9000000</color>
+    <color name="bottom_sheet_bg_dark">#ff303030</color>
+    <color name="bottom_sheet_bg">#ffeeeeee</color>
+    <color name="grey_35">#59efefef</color>
+    <color name="grey_55">#8Cefefef</color>
+    <color name="grey_85">#D9efefef</color>
+
+    <color name="multiple_image_select_primaryLight">#90000000</color>
+
+    <color name="multiple_image_select_primaryText">#FFFFFF</color>
+    <color name="multiple_image_select_secondaryText">#FFFFFF</color>
+    <color name="multiple_image_select_divider">#B6B6B6</color>
+
+    <color name="multiple_image_select_toolbarPrimaryText">#FFFFFF</color>
+
+    <color name="multiple_image_select_albumTextBackground">#90000000</color>
+    <color name="multiple_image_select_imageSelectBackground">#90000000</color>
+
+    <color name="multiple_image_select_buttonText">#FFFFFF</color>
+
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
+
+    <color name="bg">#f5f5f5</color>
+    <color name="bgnew">#464756</color>
+
+    <color name="filters_header">#90000000</color>
+    <color name="filters_chips">#90000000</color>
+
+
+    <color name="StudentsStatusBarColor">#E3663C</color>
+    <color name="StudentsActionBarColor">#EC744C</color>
+
+    <color name="CheckinStatusBarColor">#21ABC0</color>
+    <color name="CheckinActionBarColor">#25BBD3</color>
+
+    <color name="ActivitiesStatusBarColor">#9180CE</color>
+    <color name="ActivitiesActionBarColor">#9C8DD3</color>
+
+    <color name="EventsStatusBarColor">#3B87D3</color>
+    <color name="EventsActionBarColor">#549CE2</color>
+
+    <color name="MsgStatusBarColor">#90CE52</color>
+    <color name="MsgActionBarColor">#A4D474</color>
+    <color name="app_background">#F8F8F8</color>
+    <color name="rough_blue">#0095BF</color>
+    <color name="slider_background">#5533</color>
+    <color name="rough_red">#FF5860</color>
+    <color name="rough_gold">#C9923D</color>
+    <color name="theme_items_color">#29DDC3</color>
+    <color name="temp_theme_items_color">#8BC34A</color>
+<!-- for button on registration page-->
+    <color name="button_pressed">#ff8a00</color>
+    <color name="button_focused">#ff8a00</color>
+    <color name="button_default">#1c76bb</color>
+
+    <color name="selected">#893935</color>
+    <color name="current">#6a5c8c</color>
+    <color name="yellow">#F7C735</color>
+    <color name="textcolor_gray">#717171</color>
+
+</resources>

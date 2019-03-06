@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import agri.app.Adapter.CropSelectionAdapter.CropSelectionGridAdapter;
+import agri.app.MainActivity;
 import agri.app.Utili.BaseFragment;
 import agri.app.addCropFragmentModule.AddCropFragment;
 import agri.app.DataModule.CropItemSelectionPOJO;
@@ -42,6 +44,10 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
     TextView txtToolBarTitle;
     ImageView imgToolBarBack;
     FragmentManager manager;
+    ArrayList<Integer> posCrop;
+    int i;
+
+    private static final String TAG = "CropSelectionFragment";
 
     public CropSelectionFragment() {
         // Required empty public constructor
@@ -76,11 +82,23 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
             @Override
             public void onClick(View v) {
 
-                AddCropFragment addCropFragment = new AddCropFragment();
+                MainActivity activity = (MainActivity) getActivity();
+                posCrop = activity.getMyDaCr();
+                Log.d(TAG, "onCreateView: " + posCrop);
 
-                FragmentTransaction transaction=manager.beginTransaction();
-                transaction.replace(R.id.fragment_container,addCropFragment).addToBackStack(null).commit();
+                if (posCrop!=null){i = posCrop.size();}
 
+                if (i!= 0) {
+
+                    AddCropFragment addCropFragment = new AddCropFragment();
+
+                    FragmentTransaction transaction=manager.beginTransaction();
+                    transaction.replace(R.id.fragment_container,addCropFragment).addToBackStack(null).commit();
+                }else{
+
+                    Toast.makeText(getActivity(), "AddMore", Toast.LENGTH_LONG).show();
+                      Log.d(TAG, "onClick: after adition "+i);
+                }
             }
         });
         return view;
@@ -91,6 +109,7 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
         mContext = getActivity();
         manager=getFragmentManager();
         setToolBar("Crop selection",view);
+        i=0;
 
     }
 

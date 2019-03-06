@@ -153,5 +153,6 @@
 
     <string name="area_under_total_cultivation">Area under total cultivation</string>
     <string name="date_of_sowing">Date of Sowing</string>
+    <string name="submit">Submit</string>
 
 </resources>

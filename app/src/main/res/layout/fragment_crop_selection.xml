@@ -41,9 +41,12 @@
             android:id="@+id/crop_selection_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:background="@drawable/button_click_effect"
-            android:text="@string/add"
+            android:text="@string/submit"
             android:textColor="@color/white" />
 
     </LinearLayout>

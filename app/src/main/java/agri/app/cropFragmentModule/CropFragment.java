@@ -98,14 +98,15 @@ public class CropFragment extends BaseFragment {
     public void initView() {
         mContext = getActivity();
         manager = getFragmentManager();
-//        txtToolBarTitle = fragmentCropBinding.toolbar.findViewById(R.id.txtToolbarTitle);
-//        txtToolBarTitle.setText("Crop Addition");
+        txtToolBarTitle = fragmentCropBinding.toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolBarTitle.setText("Crop Addition");
         i=0;
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
-//        imgToolBarBack = fragmentCropBinding.toolbar.findViewById(R.id.imgToolbarHome);
-//        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+        imgToolBarBack = fragmentCropBinding.toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setVisibility(View.GONE);
+        //        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //

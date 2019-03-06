@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity
     ArrayList<Integer> mposCrop;
     ArrayList<Integer> mposCropAdd;
     ArrayList<Integer> mposCr;
+    ArrayList<Integer> mposCrAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -418,6 +419,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void respond(ArrayList<Integer> position) {
         mposCrop = position;
+        mposCrAd = position;
         Log.d(TAG, "respond: "+mposCrop);
 
         Bundle bundle = new Bundle();
@@ -434,6 +436,10 @@ public class MainActivity extends AppCompatActivity
 
     public ArrayList<Integer> getMyDataCrop() {
         return mposCropAdd;
+    }
+
+    public ArrayList<Integer> getMyDaCr() {
+        return mposCrAd;
     }
 
     public ArrayList<Integer> getMyCrop() {

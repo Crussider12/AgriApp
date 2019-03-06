@@ -20,9 +20,7 @@ import agri.app.Adapter.MandiDetailsAdapter;
 import agri.app.R;
 import agri.app.Utili.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class MandiItemDetailFragment extends BaseFragment {
 
     View view;

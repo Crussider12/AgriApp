@@ -7,23 +7,31 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import agri.app.Adapter.CropAdditionGridAdapter;
 import agri.app.DataModule.CropAddItemPOJO;
+import agri.app.MainActivity;
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentCropBinding;
 import agri.app.homeFragmentModule.HomeFragment;
 
+import static android.support.constraint.Constraints.TAG;
 
-public class CropFragment extends Fragment {
+
+public class CropFragment extends BaseFragment {
 
     View view;
     FragmentCropBinding fragmentCropBinding;
@@ -32,15 +40,20 @@ public class CropFragment extends Fragment {
     TextView txtToolBarTitle;
     ImageView imgToolBarBack;
     FragmentManager manager;
+    int i;
+    ArrayList<Integer> posCropSelected;
 
+    private static final String TAG = "CropFragment";
 
     public CropFragment() {
         // Required empty public constructor
     }
+
     public static CropFragment newInstance() {
         CropFragment cropFragment = new CropFragment();
         return cropFragment;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,18 +65,30 @@ public class CropFragment extends Fragment {
 
         initView();
         CropAdditionGridAdapter gridAd = new CropAdditionGridAdapter(mContext, cropallItem);
-       // gridAd.notifyDataSetChanged();
+        // gridAd.notifyDataSetChanged();
         fragmentCropBinding.cropSelectionFirstView.setAdapter(gridAd);
 
         fragmentCropBinding.cropSelectionFirstAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                HomeFragment homeFragment = new HomeFragment();
 
-                FragmentTransaction transaction=manager.beginTransaction();
-                transaction.replace(R.id.fragment_container,homeFragment).addToBackStack(null).commit();
+                MainActivity activity = (MainActivity) getActivity();
 
+                posCropSelected = activity.getMyCrop();
+                Log.d(TAG, "onCreateView: " + posCropSelected);
+
+                if (posCropSelected!=null){i = posCropSelected.size();}
+
+                if (i!= 0) {
+                    HomeFragment homeFragment = new HomeFragment();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.replace(R.id.fragment_container, homeFragment).addToBackStack(null).commit();
+                }else{
+
+                    Toast.makeText(getActivity(), "AddMore", Toast.LENGTH_LONG).show();
+                  //  Log.d(TAG, "onClick: after adition "+i);
+                }
             }
         });
 
@@ -72,9 +97,10 @@ public class CropFragment extends Fragment {
 
     public void initView() {
         mContext = getActivity();
-        manager=getFragmentManager();
+        manager = getFragmentManager();
 //        txtToolBarTitle = fragmentCropBinding.toolbar.findViewById(R.id.txtToolbarTitle);
 //        txtToolBarTitle.setText("Crop Addition");
+        i=0;
 
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
@@ -113,5 +139,13 @@ public class CropFragment extends Fragment {
     }
 
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

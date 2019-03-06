@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity
     public static FragmentTransaction ft;
     ArrayList<Integer> mposCrop;
     ArrayList<Integer> mposCropAdd;
+    ArrayList<Integer> mposCr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -435,9 +436,14 @@ public class MainActivity extends AppCompatActivity
         return mposCropAdd;
     }
 
+    public ArrayList<Integer> getMyCrop() {
+        return mposCr;
+    }
+
     @Override
     public void respAdd(ArrayList<Integer> position) {
         mposCropAdd = position;
+        mposCr = position;
 
         Log.d(TAG, "respond: "+mposCropAdd);
 
@@ -447,5 +453,14 @@ public class MainActivity extends AppCompatActivity
         HomeFragment fragobj = new HomeFragment();
         fragobj.setArguments(bundle);
         Log.d(TAG, "onCreate: addobjhh"+mposCropAdd.size()+""+mposCropAdd);
+
+        Bundle bund = new Bundle();
+        bund.putIntegerArrayList("pos",mposCr);
+        CropFragment cropFragment = new CropFragment();
+        cropFragment.setArguments(bund);
+
+
+
+
     }
 }

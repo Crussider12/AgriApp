@@ -51,8 +51,6 @@ public class EditProfileFragment extends Fragment {
             public void onClick(View v) {
                 MainActivity.fm.beginTransaction().replace(R.id.fragment_container,new ProfileFragment(),null).addToBackStack(null).commit();
                 onStop();
-
-
             }
         });
 

@@ -269,8 +269,9 @@
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/button_background_reg"
+                        android:background="@drawable/button_click_effect"
                         android:id="@+id/save_user_details"
+                        android:padding="@dimen/_4sdp"
                         android:textColor="@color/white"
                         android:layout_gravity="bottom"
                         android:elevation="@dimen/margin4"

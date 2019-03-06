@@ -157,7 +157,7 @@
                                 android:layout_margin="@dimen/margin12"
                                 android:layout_weight="1"
                                 android:onClick="CalendarHome"
-                                android:background="@drawable/home_crop_detail_button_border"
+                                android:background="@drawable/button_click_effect"
                                 android:padding="@dimen/margin12"
                                 android:text="@string/calendar"
                                 android:textColor="@color/white" />
@@ -167,7 +167,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/margin12"
                                 android:layout_weight="1"
-                                android:background="@drawable/home_crop_detail_button_border"
+                                android:background="@drawable/button_click_effect"
                                 android:padding="@dimen/margin12"
                                 android:text="@string/diary"
                                 android:textColor="@color/white"/>
@@ -182,7 +182,7 @@
                             android:layout_marginTop="@dimen/margin18"
                             android:layout_marginStart="@dimen/margin18"
                             android:onClick="CropSelectionHome"
-                            android:background="@drawable/home_crop_detail_button_border"
+                            android:background="@drawable/button_click_effect"
                             android:gravity="center"
                             android:id="@+id/home_farm_add"
                             android:padding="@dimen/margin12"

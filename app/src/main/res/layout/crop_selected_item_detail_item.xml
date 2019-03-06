@@ -221,21 +221,27 @@
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin2"
                     android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
                     android:id="@+id/crop_selection_cancel"
-                    android:background="@drawable/button_background_reg"
+                    android:background="@drawable/button_click_effect"
                     android:text="@string/cancel"
                     android:textColor="@color/white" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin2"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
                     android:layout_weight="1"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
                     android:onClick="CropAdd"
                     android:id="@+id/crop_selection_add"
-                    android:background="@drawable/button_background_reg"
+                    android:background="@drawable/button_click_effect"
                     android:text="@string/add"
                     android:textColor="@color/white" />
             </LinearLayout>

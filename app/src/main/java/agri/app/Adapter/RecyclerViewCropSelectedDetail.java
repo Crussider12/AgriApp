@@ -1,5 +1,6 @@
 package agri.app.Adapter;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -42,7 +43,7 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
 
 
     public RecyclerViewCropSelectedDetail(AddCropFragment mcontext, ArrayList<String> mMandiName, ArrayList<String> mMandiPrice,
-                                       ArrayList<String> mMandiDistance,ArrayList<String> mMandiItemName, ArrayList<String> mImage,
+                                          ArrayList<String> mMandiDistance, ArrayList<String> mMandiItemName, ArrayList<String> mImage,
                                           ArrayList<String> mCropItemReqName, ArrayList<String> mCropItemReqQuant) {
 
         this.miImage = mImage;
@@ -100,6 +101,22 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
         viewHolder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder((Activity) v.getContext());
+
+                alertDialog.setTitle("Details:");
+                alertDialog.setMessage("Are you sure you want to delete this?");
+                alertDialog.setIcon(R.drawable.ic_arrow_back);
+
+                alertDialog.setPositiveButton(
+                        "Delete",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Do the stuff..
+                            }
+                        }
+                );
+            alertDialog.show();
+
                 Log.d(TAG, "onClick: add");
 
             }
@@ -128,7 +145,7 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
         TextView mandiName, mandiPrice, mandiDistance, mandiItemName;
         CardView parent_layout;
         RecyclerView recyclerView;
-        Button add,cancel;
+        Button add, cancel;
 
 
         public CropViewHolder(@NonNull View itemView) {
@@ -145,7 +162,6 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
             add = itemView.findViewById(R.id.crop_selection_add);
         }
     }
-
 
 
 }

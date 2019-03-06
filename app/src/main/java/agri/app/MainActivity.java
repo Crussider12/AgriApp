@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import agri.app.Interfaces.CropAddListener;
 import agri.app.aboutusFragmentModule.AboutusFragment;
 import agri.app.addCropFragmentModule.AddCropFragment;
 import agri.app.calendarModule.CalenderActivity;
@@ -49,7 +50,7 @@ import agri.app.wishlistFragmentModule.WishlistFragment;
 import agri.app.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, FragmentCommunicationCrop {
+        implements NavigationView.OnNavigationItemSelectedListener, FragmentCommunicationCrop, CropAddListener {
 
     private Context mContext;
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     public static FragmentManager fm;
     public static FragmentTransaction ft;
     ArrayList<Integer> mposCrop;
+    ArrayList<Integer> mposCropAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         activityMainBinding.navView.setNavigationItemSelectedListener(this);
         activityMainBinding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        createInnerView("Home");
+        createInnerView("Crops");
     }
 
     @Override
@@ -429,4 +431,21 @@ public class MainActivity extends AppCompatActivity
         return mposCrop;
     }
 
+    public ArrayList<Integer> getMyDataCrop() {
+        return mposCropAdd;
+    }
+
+    @Override
+    public void respAdd(ArrayList<Integer> position) {
+        mposCropAdd = position;
+
+        Log.d(TAG, "respond: "+mposCropAdd);
+
+        Bundle bundle = new Bundle();
+        bundle.putIntegerArrayList("positions",mposCropAdd);
+        // set Fragmentclass Arguments
+        HomeFragment fragobj = new HomeFragment();
+        fragobj.setArguments(bundle);
+        Log.d(TAG, "onCreate: addobjhh"+mposCropAdd.size()+""+mposCropAdd);
+    }
 }

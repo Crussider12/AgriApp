@@ -28,6 +28,7 @@ import java.util.HashMap;
 import agri.app.Adapter.CropHomeAdapter.RecyclerViewCropDetailCard;
 import agri.app.Adapter.HomeFragmentAdapters.RecyclerViewMandiCard;
 import agri.app.Adapter.RecyclerViewAdapter;
+import agri.app.MainActivity;
 import agri.app.R;
 import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentHomeBinding;
@@ -49,6 +50,11 @@ public class HomeFragment extends BaseFragment implements BaseSliderView.OnSlide
     private ArrayList<String> mCropName = new ArrayList<>();
     private ArrayList<String> mCropLandSize = new ArrayList<>();
     private ArrayList<String> mCropSOD = new ArrayList<>();
+    private ArrayList<Integer> posCropSelected;
+    int i;
+    ArrayList<String> mImageURL = new ArrayList<>();
+    ArrayList<String> mNam = new ArrayList<>();
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -68,9 +74,22 @@ public class HomeFragment extends BaseFragment implements BaseSliderView.OnSlide
                 inflater, R.layout.fragment_home, container, false);
         view = fragmentHomeBinding.getRoot();
 
+        MainActivity activity =(MainActivity)getActivity();
+        posCropSelected = activity.getMyDataCrop();
+        Log.d(TAG, "onCreate: addFragcrop"+posCropSelected);
+
+
+
+
         initView();
         intiSilder();
         initImageBitmaps();
+        for (i = 0; i < posCropSelected.size(); i++) {
+            mImageURL.add(mImageURLS.get(posCropSelected.get(i)));
+            mNam.add(mNames.get(posCropSelected.get(i)));
+            Log.d(TAG, "initRecyclerMandiView: " + posCropSelected + "");
+        }
+
         initRecyclerView();
         initRecyclerMandiCard();
         initRecyclerCropCard();
@@ -114,7 +133,13 @@ public class HomeFragment extends BaseFragment implements BaseSliderView.OnSlide
     private void initRecyclerView() {
         Log.d(TAG, "initRecyclerView: recyclerviewinitialisation");
         //it refers to the adapter made seperately
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNames, mImageURLS);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mNam, mImageURL);
+
+        //The fragment recycler for adding the starting crop addition
+
+
+
+
 
         fragmentHomeBinding.veglititem.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/action_order"
-        android:icon="@mipmap/myorders"
+        android:icon="@drawable/ic_shopping_cart_white_24dp"
         android:orderInCategory="10"
         android:title="@string/setting"
         app:showAsAction="always" />

@@ -17,6 +17,7 @@ import java.util.List;
 
 import agri.app.Adapter.RecyclerViewCropSelectedDetail;
 import agri.app.DataModule.CropSelectItemReq;
+import agri.app.MainActivity;
 import agri.app.R;
 import agri.app.databinding.FragmentAddCropBinding;
 
@@ -39,14 +40,14 @@ public class AddCropFragment extends Fragment {
     private ArrayList<String> mItemReqQuant = new ArrayList<>();
     private ArrayList<List<CropSelectItemReq>> mItemReq = new ArrayList<>();
     private ArrayList<Integer> posCropSelected;
-    //   int i;
-//    ArrayList<String> mImageURL = new ArrayList<>();
-//    ArrayList<String> mNameMand = new ArrayList<>();
-//    ArrayList<String> mPriceIte = new ArrayList<>();
-//    ArrayList<String> mNam = new ArrayList<>();
-//    ArrayList<String> mDistanceMand = new ArrayList<>();
-//    ArrayList<String> mItemReqNam = new ArrayList<>();
-//    ArrayList<String> mItemReqQuan = new ArrayList<>();
+    int i;
+    ArrayList<String> mImageURL = new ArrayList<>();
+    ArrayList<String> mNameMand = new ArrayList<>();
+    ArrayList<String> mPriceIte = new ArrayList<>();
+    ArrayList<String> mNam = new ArrayList<>();
+    ArrayList<String> mDistanceMand = new ArrayList<>();
+    ArrayList<String> mItemReqNam = new ArrayList<>();
+    ArrayList<String> mItemReqQuan = new ArrayList<>();
 
     List<CropSelectItemReq> cropallItem = getCropSelectItemReqObject();
 
@@ -61,16 +62,18 @@ public class AddCropFragment extends Fragment {
         return addCropFragment;
     }
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-              posCropSelected = getArguments().getIntegerArrayList("positions");
-            Log.d(TAG, "onCreate: addFragcrop"+getArguments());
-        }
-    }
+//
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        Bundle bundle = this.getArguments();
+//        if (bundle != null) {
+//            posCropSelected = getArguments().getIntegerArrayList("positions");
+//
+//        }
+//        Log.d(TAG, "onCreate: addFragcrop"+bundle);
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,20 +86,23 @@ public class AddCropFragment extends Fragment {
         view = fragmentAddCropBinding.getRoot();
 
 
+        MainActivity activity =(MainActivity)getActivity();
+        posCropSelected = activity.getMyData();
+        Log.d(TAG, "onCreate: addFragcrop"+posCropSelected);
         initView();
         initDataFields();
 
-
-//        for (i = 0; i < posCropSelected.size(); i++) {
-//            mImageURL.add(mImageURLs.get(posCropSelected.get(i)));
-//            mNameMand.add(mNameMandi.get(posCropSelected.get(i)));
-//            mPriceIte.add(mPriceItem.get(posCropSelected.get(i)));
-//            mNam.add(mName.get(posCropSelected.get(i)));
-//            mDistanceMand.add(mDistanceMandi.get(posCropSelected.get(i)));
-//            mItemReqNam.add(mItemReqName.get(posCropSelected.get(i)));
-//            mItemReqQuan.add(mItemReqQuant.get(posCropSelected.get(i)));
-//            Log.d(TAG, "initRecyclerMandiView: " + posCropSelected + "");
-//        }
+        // for matching the data to be passed for multi select
+        for (i = 0; i < posCropSelected.size(); i++) {
+            mImageURL.add(mImageURLs.get(posCropSelected.get(i)));
+            mNameMand.add(mNameMandi.get(posCropSelected.get(i)));
+            mPriceIte.add(mPriceItem.get(posCropSelected.get(i)));
+            mNam.add(mName.get(posCropSelected.get(i)));
+            mDistanceMand.add(mDistanceMandi.get(posCropSelected.get(i)));
+            mItemReqNam.add(mItemReqName.get(posCropSelected.get(i)));
+            mItemReqQuan.add(mItemReqQuant.get(posCropSelected.get(i)));
+            Log.d(TAG, "initRecyclerMandiView: " + posCropSelected + "");
+        }
         initRecyclerMandiView();
         return view;
 
@@ -110,8 +116,8 @@ public class AddCropFragment extends Fragment {
         Log.d(TAG, "initRecyclerMandiCard: card mand");
 
 
-        final RecyclerViewCropSelectedDetail cropDetailCard = new RecyclerViewCropSelectedDetail(this, mNameMandi, mPriceItem, mDistanceMandi,
-                mName, mImageURLs, mItemReqName, mItemReqQuant);
+        final RecyclerViewCropSelectedDetail cropDetailCard = new RecyclerViewCropSelectedDetail(this, mNameMand, mPriceIte, mDistanceMand,
+                mNam, mImageURL, mItemReqNam, mItemReqQuan);
 
         //These two for making one view on one row at a swipe time
         SnapHelper snapHelper = new PagerSnapHelper();

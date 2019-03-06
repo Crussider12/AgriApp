@@ -1,113 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:background="@color/colorWhite"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
 
     <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
+        android:id="@+id/layoutProductDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/txtProductName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Benzzzzzz"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size20"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/txtPrize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtProductCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Vegetable"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtPrize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
+
+        <TextView
+            android:id="@+id/txtPrize"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="prize"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size20"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="visible"
-            android:layout_marginEnd="8dp" android:id="@+id/layoutProductDetail"
-            app:layout_constraintHorizontal_bias="1.0">
-
-
-        <TextView
-                android:text="Benzzzzzz"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtProductName"
-                android:textStyle="bold"
-                android:ellipsize="end"
-                android:textSize="@dimen/text_size20"
-                android:maxLines="2"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginEnd="32dp" app:layout_constraintEnd_toStartOf="@+id/txtPrize"/>
-        <TextView
-                android:text="Vegetable"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtProductCategory"
-                android:layout_marginTop="8dp"
-                android:textSize="@dimen/text_size16"
-                android:textColor="@color/gray"
-                app:layout_constraintTop_toBottomOf="@+id/txtProductName" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toStartOf="@+id/txtPrize"/>
-        <TextView
-                android:text="prize"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size20"
-                android:id="@+id/txtPrize"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-        />
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerviewHorizontalView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/layoutProductDetail"/>
+        android:id="@+id/recyclerviewHorizontalView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutProductDetail" />
 
 
     <android.support.constraint.ConstraintLayout
-            android:id="@+id/layoutWebView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_border"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerviewHorizontalView"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" tools:ignore="WebViewLayout">
+        android:id="@+id/layoutWebView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerviewHorizontalView"
+        tools:ignore="WebViewLayout">
 
         <WebView
-                android:id="@+id/webViewDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:importantForAutofill="auto"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintVertical_bias="1.0" android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+            android:id="@+id/webViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorWhite"
+            android:importantForAutofill="auto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
     </android.support.constraint.ConstraintLayout>
 
 
     <include
-            android:id="@+id/layoutProgressBar"
-            layout="@layout/layout_progress_bar"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:visibility="gone"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/layoutProductDetail"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
-
-
+        android:id="@+id/layoutProgressBar"
+        layout="@layout/layout_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layoutProductDetail" />
 
 
 </android.support.constraint.ConstraintLayout>

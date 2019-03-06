@@ -268,6 +268,9 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         super.onResume();
         ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Home");
+
+
         //  setNavigationVisibility(false);
     }
 }

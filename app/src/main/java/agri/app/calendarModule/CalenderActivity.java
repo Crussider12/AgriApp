@@ -1,13 +1,18 @@
 package agri.app.calendarModule;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -24,6 +29,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 
+import agri.app.MainActivity;
 import agri.app.R;
 
 public class CalenderActivity extends AppCompatActivity {
@@ -32,16 +38,18 @@ public class CalenderActivity extends AppCompatActivity {
     private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
     private boolean shouldShow = false;
     private CompactCalendarView compactCalendarView;
-    private TextView tv_date;
+    private TextView tv_date, txtToolbarTitleName;
     private RecyclerView recyclerView;
     private Calendar calendar = Calendar.getInstance(Locale.getDefault());
     private ViewFlipper viewflipper;
     private ArrayList<EventDataDao> eventDataList = new ArrayList<>();
     private ArrayList<EventRespnse> eventDataListView = new ArrayList<>();
-
+    private ImageView imgToolBarBack;
     private EventAdapter eventAdapter;
     private Context context;
     private RelativeLayout rl_head;
+
+    CollapsingToolbarLayout toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +93,6 @@ public class CalenderActivity extends AppCompatActivity {
 //        List<Event> eventsList = compactCalendarView.getEvents(millis); // can also take a Date object
 
 
-
-
     }
 
     private void initViews() {
@@ -100,6 +106,18 @@ public class CalenderActivity extends AppCompatActivity {
         viewflipper.showNext(); //show calendar
         compactCalendarView.setCurrentDate(Calendar.getInstance().getTime()); //I don't know what to put inside setCurrentDate(), a date, yeah, but.. ?
         compactCalendarView.invalidate(); //refresh calendar
+
+        toolbar = findViewById(R.id.collapsing_toolbar);
+        txtToolbarTitleName = toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolbarTitleName.setText("Calendar");
+        imgToolBarBack = toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            //    startActivity(new Intent(CalenderActivity.this, MainActivity.class));
+
+            }
+        });
 
 
         recyclerView = findViewById(R.id.bookings_listview);
@@ -126,12 +144,11 @@ public class CalenderActivity extends AppCompatActivity {
         eventDataList.add(new EventDataDao(dateFormatForMonth.format(new Date()), Calendar.FEBRUARY, 2019, eventRespnses2));
 
 
-
         addEventToCalender(eventDataList);
 
         tv_date.setText(dateFormatForMonth.format(compactCalendarView.getFirstDayOfCurrentMonth()));
 
- compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date date) {
                 tv_date.setText(dateFormatForMonth.format(date));

@@ -425,4 +425,8 @@ public class MainActivity extends AppCompatActivity
         Log.d(TAG, "onCreate: addobj"+mposCrop.size()+""+mposCrop);
     }
 
+    public ArrayList<Integer> getMyData() {
+        return mposCrop;
+    }
+
 }

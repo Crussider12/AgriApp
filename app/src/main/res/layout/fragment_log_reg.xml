@@ -34,7 +34,8 @@
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:layout_marginBottom="@dimen/_18sdp"
                 android:textColor="@color/white"
-                android:background="@drawable/logreg_borders"
+                android:padding="@dimen/_14sdp"
+                android:background="@drawable/button_click_effect"
                 android:textSize="@dimen/_14ssp"
                 android:elevation="@dimen/_4ssp"
                 android:text="@string/login" />
@@ -50,7 +51,8 @@
                 android:layout_marginEnd="@dimen/_30sdp"
                 android:textColor="@color/white"
                 android:layout_marginBottom="@dimen/_30sdp"
-                android:background="@drawable/logreg_borders"
+                android:padding="@dimen/_14sdp"
+                android:background="@drawable/button_click_effect"
                 android:elevation="@dimen/_4sdp"
                 android:textSize="@dimen/_14ssp"
                 android:text="@string/registration" />

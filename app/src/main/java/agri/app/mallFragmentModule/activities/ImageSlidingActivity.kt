@@ -58,6 +58,8 @@ class ImageSlidingActivity :AppCompatActivity(),View.OnClickListener {
     }
 
     private fun initalization() {
+
+        imgToolbarHome.setImageDrawable(resources.getDrawable(R.drawable.ic_close_white_24dp))
         imgToolbarHome.setOnClickListener(this)
         viewpager.adapter = ImageSliderAdapter(this, productImagesArrayList,position)
        NUM_PAGES = productImagesArrayList!!.size

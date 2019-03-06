@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -14,6 +15,17 @@
         tools:context=".mallFragmentModule.MallFragment">
 
 
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+        <include android:id="@+id/toolbar"
+            layout="@layout/layout_common_toolbar"
+            app:layout_collapseMode="pin"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
         <GridView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/crop_selection_grid"
             android:layout_width="match_parent"
@@ -32,6 +44,7 @@
             android:background="@drawable/button_background_reg"
             android:text="@string/add"
             android:textColor="@color/white" />
+
     </LinearLayout>
 
 </layout>

@@ -45,9 +45,7 @@ class MallFragment : Fragment(), ItemClickListner {
     fun initView(view:View) {
         mContext = this!!.activity!!
 
-        (activity as AppCompatActivity).supportActionBar!!.show()
-        activity?.navigation?.visibility = View.VISIBLE
-
+        setToolBar()
         gridviewOfCategory = view.findViewById(R.id.gridviewOfCategory)
 
         itemClickListner  =this
@@ -60,6 +58,12 @@ class MallFragment : Fragment(), ItemClickListner {
         gridviewOfCategory.setAdapter(mallCategoryAdapter)
 
 
+    }
+
+    private fun setToolBar() {
+        (activity as AppCompatActivity).supportActionBar!!.show()
+        activity?.navigation?.visibility = View.VISIBLE
+        (activity as AppCompatActivity).supportActionBar!!.title = "Mall"
     }
 
     companion object {

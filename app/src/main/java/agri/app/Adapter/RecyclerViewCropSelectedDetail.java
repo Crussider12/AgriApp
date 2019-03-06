@@ -101,7 +101,7 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: add");
-                
+
             }
         });
 

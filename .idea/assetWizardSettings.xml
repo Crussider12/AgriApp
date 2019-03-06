@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/E:/Android/studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_chevron_right_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/E:/Android/studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_close_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_tempweat" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="ic_close_white_24dp" />
                             <entry key="sourceFile" value="D:\2-3-2019 mall\had\tempweat.svg" />
                           </map>
                         </option>

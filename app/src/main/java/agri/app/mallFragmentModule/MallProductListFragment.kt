@@ -17,10 +17,24 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_common_toolbar.*
+import kotlinx.android.synthetic.main.layout_common_toolbar.view.*
 import java.util.ArrayList
 
 
-class MallProductListFragment : Fragment(), ItemClickListner {
+class MallProductListFragment : Fragment(), ItemClickListner, View.OnClickListener{
+    override fun onClick(v: View?) {
+
+
+        when(v?.id){
+            R.id.imgToolbarHome ->{
+                if (getFragmentManager()!!.getBackStackEntryCount() > 0)
+                    getFragmentManager()?.popBackStack();
+
+            }
+        }
+    }
+
     override fun itemClickListner(position: Int) {
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val productListDetailFragment = MallProductListDetailFragment()
@@ -46,8 +60,13 @@ class MallProductListFragment : Fragment(), ItemClickListner {
     private fun initView(itemView:View) {
         mContext = this!!.activity!!
 
-        (activity as AppCompatActivity).supportActionBar!!.show()
-        activity?.navigation?.visibility = View.VISIBLE
+        (activity as AppCompatActivity).supportActionBar!!.hide()
+        activity?.navigation?.visibility = View.GONE
+
+
+
+        itemView?.txtToolbarTitle.text = "Mall"
+        itemView?.imgToolbarHome.setOnClickListener(this)
 
         gridViewProductList = itemView.findViewById(R.id.gridViewProductList)
 
@@ -69,5 +88,14 @@ class MallProductListFragment : Fragment(), ItemClickListner {
         fun newInstance(): MallProductListFragment {
             return MallProductListFragment()
         }
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar!!.hide()
+        activity?.navigation?.visibility = View.VISIBLE
+        //  setNavigationVisibility(false);
     }
 }

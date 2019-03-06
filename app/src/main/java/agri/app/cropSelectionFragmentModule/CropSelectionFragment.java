@@ -11,6 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,9 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
     FragmentCropSelectionBinding fragmentCropSelectionBinding;
     List<CropItemSelectionPOJO> cropallItem = getAllCropItemObject();
     Context mContext;
-    FragmentHomeBinding fragmentHomeBinding;
+    TextView txtToolBarTitle;
+    ImageView imgToolBarBack;
+    FragmentManager manager;
 
     public CropSelectionFragment() {
         // Required empty public constructor
@@ -69,7 +74,7 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
             public void onClick(View v) {
 
                 AddCropFragment addCropFragment = new AddCropFragment();
-                FragmentManager manager=getFragmentManager();
+
                 FragmentTransaction transaction=manager.beginTransaction();
                 transaction.replace(R.id.fragment_container,addCropFragment).addToBackStack(null).commit();
 
@@ -81,6 +86,20 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
 
     public void initView() {
         mContext = getActivity();
+        manager=getFragmentManager();
+        txtToolBarTitle = fragmentCropSelectionBinding.toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolBarTitle.setText("Crop Selection");
+        imgToolBarBack = fragmentCropSelectionBinding.toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (getFragmentManager().getBackStackEntryCount() > 0)
+                manager.popBackStack();
+
+
+            }
+        });
     }
 
     private List<CropItemSelectionPOJO> getAllCropItemObject() {
@@ -103,6 +122,7 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
 
+
         //  setNavigationVisibility(false);
     }
 
@@ -112,4 +132,6 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
         posCropSelected = position;
         Log.d(TAG, "respond: frag"+position);
     }
+
+
 }

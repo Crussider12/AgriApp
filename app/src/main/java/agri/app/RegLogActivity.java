@@ -69,4 +69,12 @@ public class RegLogActivity extends AppCompatActivity {
         ft.replace(R.id.log_reg_container, loginFragment).addToBackStack(null);
         ft.commit();
     }
+
+    public void Close(View v) {
+        fm = getSupportFragmentManager();
+        ft = fm.beginTransaction();
+        LogRegFragment logRegFragment = new LogRegFragment().newInstance();
+        ft.replace(R.id.log_reg_container, logRegFragment).addToBackStack(null);
+        ft.commit();
+    }
 }

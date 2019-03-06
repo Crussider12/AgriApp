@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_image_sliding.*
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.layout_common_toolbar.*
+import kotlinx.android.synthetic.main.layout_common_toolbar.view.*
 
 class MallProductListDetailFragment : Fragment(), ItemClickListner, View.OnClickListener {
 
@@ -55,8 +56,13 @@ class MallProductListDetailFragment : Fragment(), ItemClickListner, View.OnClick
     private fun initView(itemView: View) {
         mContext = this!!.activity!!
         itemClickListner = this
+
         (activity as AppCompatActivity).supportActionBar!!.hide()
         activity?.navigation?.visibility = View.GONE
+        itemView.imgToolbarHome?.setOnClickListener(this)
+        itemView.txtToolbarTitle.text ="Mall"
+
+
         viewPager = itemView.findViewById(R.id.viewPager)
         tabIndicator = itemView.findViewById(R.id.indicator)
         nestedScrolProductDetail = itemView.findViewById(R.id.nestedScrolProductDetail)

@@ -6,233 +6,247 @@
 
     </data>
 
-    <FrameLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".weatherFragmentModule.WeatherFragment">
+        android:layout_height="wrap_content"
+        tools:context=".weatherFragmentModule.WeatherFragment"
+        android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <include
+                layout="@layout/layout_common_toolbar"
+                app:layout_collapseMode="pin" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:scrollbars="none">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:background="@color/white"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/white">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <android.support.design.widget.AppBarLayout
-                        android:id="@+id/appbar"
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <android.support.design.widget.CollapsingToolbarLayout
-                        android:id="@+id/collapsing_toolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin24"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:weightSum="1">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/margin12"
+                                    android:src="@drawable/tempweat" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical"
+                                android:padding="@dimen/margin8"
+
+                                android:weightSum="1">
+
+                                <agri.app.Customviews.HelveticaNeuBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/temperory"
+                                    android:textSize="@dimen/text_size36" />
+
+                                <agri.app.Customviews.HelveticaNeuBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/temp_humidity"
+                                    android:textSize="@dimen/text_size16" />
+
+                                <agri.app.Customviews.HelveticaNeuBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/temp_percip"
+                                    android:textSize="@dimen/text_size16" />
+
+                                <agri.app.Customviews.HelveticaNeuBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/temp_wind"
+                                    android:textSize="@dimen/text_size16" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="bottom"
+                            android:background="@color/gray" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
+                            <agri.app.Customviews.HelveticaNeuBoldTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:text="Wind"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_17sdp" />
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/margin24"
                                 android:orientation="horizontal">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:weightSum="1">
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:padding="@dimen/margin12"
-                                        android:src="@drawable/tempweat" />
-
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:orientation="vertical"
-                                    android:padding="@dimen/margin8"
-
-                                    android:weightSum="1">
-
-                                    <agri.app.Customviews.HelveticaNeuBoldTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/temperory"
-                                        android:textSize="@dimen/text_size36" />
-
-                                    <agri.app.Customviews.HelveticaNeuBoldTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/temp_humidity"
-                                        android:textSize="@dimen/text_size16" />
-
-                                    <agri.app.Customviews.HelveticaNeuBoldTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/temp_percip"
-                                        android:textSize="@dimen/text_size16" />
-
-                                    <agri.app.Customviews.HelveticaNeuBoldTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/temp_wind"
-                                        android:textSize="@dimen/text_size16" />
-                                </LinearLayout>
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="fill_parent"
-                                android:layout_height="1dp"
-                                android:layout_gravity="bottom"
-                                android:background="@color/gray" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
 
                                 <agri.app.Customviews.HelveticaNeuBoldTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Wind"
+                                    android:layout_gravity="center_vertical"
                                     android:layout_margin="@dimen/_5sdp"
+                                    android:text="5"
                                     android:textColor="@color/black"
                                     android:textSize="@dimen/_17sdp" />
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_margin="@dimen/_5sdp"
 
-                                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                                    android:orientation="vertical">
+
+                                    <ImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
-                                        android:layout_margin="@dimen/_5sdp"
+                                        android:src="@drawable/navigation"
                                         android:text="5"
                                         android:textColor="@color/black"
                                         android:textSize="@dimen/_17sdp" />
 
-                                    <LinearLayout
+                                    <agri.app.Customviews.HelveticaNeuBoldTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_margin="@dimen/_5sdp"
+                                        android:text="km/h"
+                                        android:textColor="@color/textcolor_gray"
+                                        android:textSize="@dimen/_12ssp" />
 
-                                        android:orientation="vertical">
+                                </LinearLayout>
 
-                                        <ImageView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_gravity="center_vertical"
-                                            android:src="@drawable/navigation"
-                                            android:text="5"
-                                            android:textColor="@color/black"
-                                            android:textSize="@dimen/_17sdp" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_margin="@dimen/_5sdp"
 
-                                        <agri.app.Customviews.HelveticaNeuBoldTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="km/h"
-                                            android:textColor="@color/textcolor_gray"
-                                            android:textSize="@dimen/_12ssp" />
+                                    android:orientation="vertical">
 
-                                    </LinearLayout>
-
-                                    <LinearLayout
+                                    <agri.app.Customviews.HelveticaNeuBoldTextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center_vertical"
-                                        android:layout_margin="@dimen/_5sdp"
+                                        android:text="Calm"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_17ssp" />
 
-                                        android:orientation="vertical">
+                                    <agri.app.Customviews.HelveticaNeuBoldTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Now * From east"
+                                        android:textColor="@color/textcolor_gray"
+                                        android:textSize="@dimen/_12ssp" />
 
-                                        <agri.app.Customviews.HelveticaNeuBoldTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Calm"
-                                            android:textColor="@color/black"
-                                            android:textSize="@dimen/_17ssp" />
-
-                                        <agri.app.Customviews.HelveticaNeuBoldTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Now * From east"
-                                            android:textColor="@color/textcolor_gray"
-                                            android:textSize="@dimen/_12ssp" />
-
-                                    </LinearLayout>
                                 </LinearLayout>
                             </LinearLayout>
-
-
-                            <LinearLayout
-                                android:id="@+id/wind_day"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="@dimen/margin16"
-                                android:orientation="horizontal">
-
-                                <android.support.v7.widget.RecyclerView
-                                    android:id="@+id/wind_day_time"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content">
-
-                                </android.support.v7.widget.RecyclerView>
-
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="fill_parent"
-                                android:layout_height="1dp"
-                                android:layout_gravity="bottom"
-                                android:background="@color/gray" />
-
-
-                   <!-- <android.support.v4.widget.NestedScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingBottom="@dimen/activity_vertical_margin"
-                        android:paddingLeft="@dimen/activity_horizontal_margin"
-                        android:paddingRight="@dimen/activity_horizontal_margin"
-                        android:paddingTop="@dimen/activity_vertical_margin"
-                        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-
-                    <agri.app.Customviews.HelveticaNeuBoldTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_5sdp"
-                        android:text="Sunrise and Sunset"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_17ssp" />
                         </LinearLayout>
-                    </android.support.design.widget.CollapsingToolbarLayout>
-                    </android.support.design.widget.AppBarLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/wind_day"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin16"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/wind_day_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            </android.support.v7.widget.RecyclerView>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:layout_gravity="bottom"
+                            android:background="@color/gray" />
+
+
+                        <!-- <android.support.v4.widget.NestedScrollView
+                             android:layout_width="match_parent"
+                             android:layout_height="match_parent"
+                             android:paddingBottom="@dimen/activity_vertical_margin"
+                             android:paddingLeft="@dimen/activity_horizontal_margin"
+                             android:paddingRight="@dimen/activity_horizontal_margin"
+                             android:paddingTop="@dimen/activity_vertical_margin"
+                             app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+                        <agri.app.Customviews.HelveticaNeuBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:text="Sunrise and Sunset"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_17ssp" />
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/_5sdp"
                         android:orientation="horizontal"
-                        android:weightSum="2">
+                        android:weightSum="2"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -479,5 +493,5 @@
             </RelativeLayout>
         </ScrollView>
 
-    </FrameLayout>
+    </LinearLayout>
 </layout>

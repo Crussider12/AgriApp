@@ -23,15 +23,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import agri.app.Customviews.HelveticaNeuRegularEditText;
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class RegistrationFragment extends Fragment {
+public class RegistrationFragment extends BaseFragment {
 
 
     View view;
@@ -306,5 +309,15 @@ public class RegistrationFragment extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

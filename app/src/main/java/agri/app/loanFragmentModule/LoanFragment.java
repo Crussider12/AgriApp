@@ -2,13 +2,17 @@ package agri.app.loanFragmentModule;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import agri.app.R;
+import org.jetbrains.annotations.NotNull;
 
-public class LoanFragment extends Fragment {
+import agri.app.R;
+import agri.app.Utili.BaseFragment;
+
+public class LoanFragment extends BaseFragment {
     View view;
 
     public static LoanFragment newInstance() {
@@ -20,6 +24,24 @@ public class LoanFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_loan, container, false);
+        init();
         return view;
+    }
+
+    private void init() {
+        setToolBar("Loan",view);
+    }
+
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(name);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -8,10 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentLogRegBinding;
 
-public class LogRegFragment extends Fragment {
+public class LogRegFragment extends BaseFragment {
 
     View view;
     FragmentLogRegBinding fragmentLogRegBinding;
@@ -41,5 +44,15 @@ public class LogRegFragment extends Fragment {
 
     private void initView() {
         mContext = getActivity();
+    }
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

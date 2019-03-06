@@ -6,8 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import agri.app.R;
-public class LoginFragment extends Fragment {
+import agri.app.Utili.BaseFragment;
+
+public class LoginFragment extends BaseFragment {
 
 
     View view;
@@ -26,4 +30,13 @@ public class LoginFragment extends Fragment {
          return view;
     }
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

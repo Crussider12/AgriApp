@@ -26,6 +26,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <include
+                android:id="@+id/toolbar"
                 layout="@layout/layout_common_toolbar"
                 app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>

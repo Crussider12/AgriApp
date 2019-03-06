@@ -20,6 +20,8 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -27,11 +29,12 @@ import agri.app.Adapter.CropHomeAdapter.RecyclerViewCropDetailCard;
 import agri.app.Adapter.HomeFragmentAdapters.RecyclerViewMandiCard;
 import agri.app.Adapter.RecyclerViewAdapter;
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentHomeBinding;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class HomeFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
+public class HomeFragment extends BaseFragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener {
 
     View view;
     FragmentHomeBinding fragmentHomeBinding;
@@ -76,6 +79,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
     private void initView() {
         mContext = getActivity();
+        setToolBar("Home",view);
     }
 
     private void intiSilder() {
@@ -266,11 +270,21 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
-        getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Home");
+        setToolBar("Home",view);
 
 
         //  setNavigationVisibility(false);
+    }
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(name);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

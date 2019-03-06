@@ -14,16 +14,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 
 import agri.app.Adapter.MandiFragmentAdapters.RecyclerViewMandiDetailCard;
 import agri.app.R;
 import agri.app.RecyclerMandiItemDecoration.LinePagerIndicatorDecoration;
+import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentMandiBinding;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class MandiFragment extends Fragment {
+public class MandiFragment extends BaseFragment {
     View view;
     FragmentMandiBinding fragmentMandiBinding;
     Context mContext;
@@ -59,6 +62,7 @@ public class MandiFragment extends Fragment {
 
     private void initView() {
         mContext = getActivity();
+        setToolBar("Mandi",view);
     }
 
     private void initRecyclerMandiView() {
@@ -112,9 +116,19 @@ public class MandiFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
-        getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        setToolBar("Mandi",view);
         //  setNavigationVisibility(false);
     }
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(name);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

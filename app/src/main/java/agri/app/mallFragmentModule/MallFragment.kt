@@ -11,12 +11,17 @@ import agri.app.Adapter.MallAdapters.MallCategoryAdapter
 
 
 import agri.app.R
+import agri.app.Utili.BaseFragment
 import agri.app.eventListner.ItemClickListner
 import android.support.v7.widget.*
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MallFragment : Fragment(), ItemClickListner {
+class MallFragment : BaseFragment(), ItemClickListner {
+    override fun onClick(v: View?) {
+
+    }
+
 
     lateinit var mContext: Context
     var categoryList = ArrayList<String>()
@@ -45,7 +50,7 @@ class MallFragment : Fragment(), ItemClickListner {
     fun initView(view:View) {
         mContext = this!!.activity!!
 
-        setToolBar()
+        setToolBar("Mall",view)
         gridviewOfCategory = view.findViewById(R.id.gridviewOfCategory)
 
         itemClickListner  =this
@@ -60,17 +65,19 @@ class MallFragment : Fragment(), ItemClickListner {
 
     }
 
-    private fun setToolBar() {
-        (activity as AppCompatActivity).supportActionBar!!.show()
-        activity?.navigation?.visibility = View.VISIBLE
-        (activity as AppCompatActivity).supportActionBar!!.title = "Mall"
-    }
+
 
     companion object {
 
         fun newInstance(): MallFragment {
             return MallFragment()
         }
+    }
+
+    override fun setToolBar(name: String,view:View) {
+        (activity as AppCompatActivity).supportActionBar!!.show()
+        activity?.navigation?.visibility = View.VISIBLE
+        (activity as AppCompatActivity).supportActionBar!!.title = name
     }
 
 }

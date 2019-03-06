@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -20,6 +21,8 @@ import android.widget.ViewFlipper;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 import com.github.sundeepk.compactcalendarview.domain.Event;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,8 +34,9 @@ import java.util.Locale;
 
 import agri.app.MainActivity;
 import agri.app.R;
+import agri.app.Utili.BaseActivity;
 
-public class CalenderActivity extends AppCompatActivity {
+public class CalenderActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
 
     private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
@@ -100,28 +104,15 @@ public class CalenderActivity extends AppCompatActivity {
         viewflipper = findViewById(R.id.viewflipper);
         compactCalendarView = findViewById(R.id.compactcalendar_view);
         compactCalendarView.setUseThreeLetterAbbreviation(true);
-
-        rl_head = findViewById(R.id.rl_head);
-        ;
+        rl_head = findViewById(R.id.rl_head);;
         viewflipper.showNext(); //show calendar
         compactCalendarView.setCurrentDate(Calendar.getInstance().getTime()); //I don't know what to put inside setCurrentDate(), a date, yeah, but.. ?
-        compactCalendarView.invalidate(); //refresh calendar
-
-        toolbar = findViewById(R.id.collapsing_toolbar);
-        txtToolbarTitleName = toolbar.findViewById(R.id.txtToolbarTitle);
-        txtToolbarTitleName.setText("Calendar");
-        imgToolBarBack = toolbar.findViewById(R.id.imgToolbarHome);
-        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            //    startActivity(new Intent(CalenderActivity.this, MainActivity.class));
-
-            }
-        });
-
-
+        compactCalendarView.invalidate(); //refresh calenda
         recyclerView = findViewById(R.id.bookings_listview);
         tv_date = findViewById(R.id.tv_date);
+
+        setToolBar("Calender");
+
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -206,14 +197,30 @@ public class CalenderActivity extends AppCompatActivity {
 
     private Event setcalenderEvents(int color, long timeInMillis, EventRespnse eventRespnse, int eventCountPerDay) {
         /**/
-
-
         Event event = new Event(color, timeInMillis, eventRespnse);
-
-
         return event;
 
     }
 
 
+    @Override
+    public void setToolBar(@NotNull String name) {
+
+        toolbar = findViewById(R.id.collapsing_toolbar);
+        txtToolbarTitleName = toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolbarTitleName.setText(name);
+        imgToolBarBack = toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

@@ -6,12 +6,15 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import com.anychart.AnyChart;
@@ -22,22 +25,27 @@ import com.anychart.enums.Anchor;
 import com.anychart.graphics.vector.SolidFill;
 import com.anychart.graphics.vector.text.HAlign;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 
 import agri.app.Adapter.WeatherFragmentAdapter.RecyclerViewWeatherWindDay;
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentWeatherBinding;
 
 import static android.support.constraint.Constraints.TAG;
 
 
-public class WeatherFragment extends Fragment {
+public class WeatherFragment extends BaseFragment {
 
     View view;
     private FragmentWeatherBinding fragmentWeatherBinding;
     private ArrayList<String>mDayWind = new ArrayList<>();
     private ArrayList<String>mDayTime = new ArrayList<>();
-//    private ArrayList<WeatherDayTempModule>mData = new ArrayList<>();
+    TextView txtToolBarTitle;
+    ImageView imgToolBarBack;
+    FragmentManager manager;
 
     public WeatherFragment(){
 
@@ -69,19 +77,9 @@ public class WeatherFragment extends Fragment {
     }
     private void initView() {
         mContext = getActivity();
+        manager = getFragmentManager();
+        setToolBar("Weather",view);
     }
-
-//    private void initRecyclerWeatherDayTemp(){
-//        Log.d(TAG, "initRecyclerWeatherDayTemp: ");
-//
-//        RecyclerViewWeatherDay recyclerViewWeatherDay = new RecyclerViewWeatherDay(this,mData);
-//        LinearLayoutManager linearLayoutManager;
-//        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
-//        fragmentWeatherBinding.weatherDayTime.setLayoutManager(linearLayoutManager);
-//        fragmentWeatherBinding.weatherDayTime.setAdapter(recyclerViewWeatherDay);
-//
-//
-//    }
 
 
     private void initRecyclerWeatherDayWind(){
@@ -303,5 +301,27 @@ public class WeatherFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
         //  setNavigationVisibility(false);
+    }
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+        txtToolBarTitle = fragmentWeatherBinding.toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolBarTitle.setText(name);
+        imgToolBarBack = fragmentWeatherBinding.toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getFragmentManager().getBackStackEntryCount() > 0)
+                    manager.popBackStack();
+
+            }
+        });
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

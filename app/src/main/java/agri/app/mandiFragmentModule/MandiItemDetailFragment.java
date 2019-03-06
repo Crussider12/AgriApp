@@ -11,16 +11,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 
 
 import agri.app.Adapter.MandiDetailsAdapter;
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MandiItemDetailFragment extends Fragment {
+public class MandiItemDetailFragment extends BaseFragment {
 
     View view;
 
@@ -57,5 +60,15 @@ public class MandiItemDetailFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
         //  setNavigationVisibility(false);
+    }
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -5,11 +5,12 @@
 
     </data>
 
+
+
     <ScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:padding="@dimen/margin4"
         android:scrollbars="none"
         tools:context=".addCropFragmentModule.AddCropFragment">
 
@@ -17,6 +18,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <include android:id="@+id/toolbar"
+                layout="@layout/layout_common_toolbar"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/crop_selected_detailed_rec"

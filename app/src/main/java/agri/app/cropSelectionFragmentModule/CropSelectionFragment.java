@@ -15,10 +15,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import agri.app.Adapter.CropSelectionAdapter.CropSelectionGridAdapter;
+import agri.app.Utili.BaseFragment;
 import agri.app.addCropFragmentModule.AddCropFragment;
 import agri.app.DataModule.CropItemSelectionPOJO;
 import agri.app.Interfaces.FragmentCommunicationCrop;
@@ -29,7 +32,7 @@ import agri.app.databinding.FragmentHomeBinding;
 import static android.support.constraint.Constraints.TAG;
 
 
-public class CropSelectionFragment extends Fragment implements FragmentCommunicationCrop {
+public class CropSelectionFragment extends BaseFragment implements FragmentCommunicationCrop {
 
 
     View view;
@@ -87,19 +90,8 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
     public void initView() {
         mContext = getActivity();
         manager=getFragmentManager();
-        txtToolBarTitle = fragmentCropSelectionBinding.toolbar.findViewById(R.id.txtToolbarTitle);
-        txtToolBarTitle.setText("Crop Selection");
-        imgToolBarBack = fragmentCropSelectionBinding.toolbar.findViewById(R.id.imgToolbarHome);
-        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        setToolBar("Crop selection",view);
 
-                if (getFragmentManager().getBackStackEntryCount() > 0)
-                manager.popBackStack();
-
-
-            }
-        });
     }
 
     private List<CropItemSelectionPOJO> getAllCropItemObject() {
@@ -134,4 +126,25 @@ public class CropSelectionFragment extends Fragment implements FragmentCommunica
     }
 
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+        txtToolBarTitle = fragmentCropSelectionBinding.toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolBarTitle.setText(name);
+        imgToolBarBack = fragmentCropSelectionBinding.toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (getFragmentManager().getBackStackEntryCount() > 0)
+                    manager.popBackStack();
+
+
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

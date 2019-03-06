@@ -7,12 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MandiItemFilterFragment extends Fragment {
+public class MandiItemFilterFragment extends BaseFragment {
 
 
 
@@ -32,4 +35,13 @@ public class MandiItemFilterFragment extends Fragment {
         return inflater.inflate(R.layout.mandi_item_filter, container, false);
     }
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

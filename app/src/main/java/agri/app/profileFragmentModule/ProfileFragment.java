@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import org.jetbrains.annotations.NotNull;
+
+import agri.app.Utili.BaseFragment;
 import agri.app.editProfileFragmentModule.EditProfileFragment;
 import agri.app.homeFragmentModule.HomeFragment;
 import agri.app.MainActivity;
@@ -17,7 +20,7 @@ import agri.app.R;
 
 
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends BaseFragment {
 
 
     View view;
@@ -81,4 +84,13 @@ public class ProfileFragment extends Fragment {
     }
 
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

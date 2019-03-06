@@ -2,6 +2,7 @@ package agri.app.mallFragmentModule
 
 import agri.app.Adapter.MallAdapters.SliderAdapter
 import agri.app.R
+import agri.app.Utili.BaseFragment
 import agri.app.eventListner.ItemClickListner
 import android.content.Context
 import android.os.Bundle
@@ -22,7 +23,13 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.layout_common_toolbar.*
 import kotlinx.android.synthetic.main.layout_common_toolbar.view.*
 
-class MallProductListDetailFragment : Fragment(), ItemClickListner, View.OnClickListener {
+class MallProductListDetailFragment :BaseFragment(), ItemClickListner {
+    override fun setToolBar(name: String, view: View) {
+        (activity as AppCompatActivity).supportActionBar!!.hide()
+        activity?.navigation?.visibility = View.GONE
+        view.imgToolbarHome?.setOnClickListener(this)
+        view.txtToolbarTitle.text =name
+    }
 
 
     lateinit var viewPager: ViewPager
@@ -57,10 +64,7 @@ class MallProductListDetailFragment : Fragment(), ItemClickListner, View.OnClick
         mContext = this!!.activity!!
         itemClickListner = this
 
-        (activity as AppCompatActivity).supportActionBar!!.hide()
-        activity?.navigation?.visibility = View.GONE
-        itemView.imgToolbarHome?.setOnClickListener(this)
-        itemView.txtToolbarTitle.text ="Mall"
+        setToolBar("Mall",itemView)
 
 
         viewPager = itemView.findViewById(R.id.viewPager)

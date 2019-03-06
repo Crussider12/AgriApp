@@ -6,10 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 
 
-public class MallGroupListFragment extends Fragment {
+public class MallGroupListFragment extends BaseFragment {
     View view;
 
     public static MallGroupListFragment newInstance() {
@@ -24,5 +27,15 @@ public class MallGroupListFragment extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

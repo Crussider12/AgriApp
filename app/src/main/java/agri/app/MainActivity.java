@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         activityMainBinding.navView.setNavigationItemSelectedListener(this);
         activityMainBinding.navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        createInnerView("Crops");
+        createInnerView("CropsFirst");
     }
 
     @Override
@@ -161,6 +161,17 @@ public class MainActivity extends AppCompatActivity
             windowStudent.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
         } else if (TAG.equalsIgnoreCase("Crops")) {
+            CropSelectionFragment cropSelectionFragment = new CropSelectionFragment().newInstance();
+
+            Bundle bundle=new Bundle();
+            bundle.putString("from_fragment", "bottom_nav");
+            //set Fragmentclass Arguments
+            cropSelectionFragment.setArguments(bundle);
+            ft.replace(R.id.fragment_container, cropSelectionFragment);
+            Window windowStudent = getWindow();
+            windowStudent.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        }else if (TAG.equalsIgnoreCase("CropsFirst")) {
             CropFragment cropFragment = new CropFragment().newInstance();
             ft.replace(R.id.fragment_container, cropFragment);
             Window windowStudent = getWindow();
@@ -328,10 +339,18 @@ public class MainActivity extends AppCompatActivity
         ft.commit();
     }
 
+
+    //add from home fragment add
     public void CropSelectionHome(View v) {
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
+
         cropSelectionFragment = new CropSelectionFragment().newInstance();
+
+        Bundle bundle=new Bundle();
+        bundle.putString("from_fragment", "add");
+        //set Fragmentclass Arguments
+        cropSelectionFragment.setArguments(bundle);
         ft.replace(R.id.fragment_container, cropSelectionFragment).addToBackStack(null);
         ft.commit();
     }

@@ -7,45 +7,17 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_arrow_back_black_24dp" />
-
-
-        <agri.app.Customviews.HelveticaNeuBoldTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/margin10"
-            android:text="filter"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-
-
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_common_toolbar"/>
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:layout_gravity="bottom"
-
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/margin5"
-        android:background="@color/gray" />
+        android:background="@color/light_gray" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,7 +58,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/gray" />
+            android:background="@color/light_gray" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,7 +68,8 @@
                 android:id="@+id/card_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
                 app:cardBackgroundColor="@color/colorWhite"
                 app:cardCornerRadius="2dp"
                 app:cardElevation="2dp">
@@ -133,7 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin5"
-                        android:background="@drawable/button_background_reg"
+                        android:background="@drawable/button_click_effect"
                         android:layout_weight="1"
                         android:text="submit"
                         android:textColor="@color/white" />
@@ -142,7 +115,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin5"
-                        android:background="@drawable/button_background_reg"
+                        android:background="@drawable/button_click_effect"
                         android:layout_weight="1"
                         android:text="cancel"
                         android:textColor="@color/white" />

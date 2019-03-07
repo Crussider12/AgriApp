@@ -4,6 +4,8 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.SnapHelper;
@@ -11,20 +13,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import agri.app.Adapter.RecyclerViewCropSelectedDetail;
 import agri.app.DataModule.CropSelectItemReq;
+
 import agri.app.MainActivity;
 import agri.app.R;
+import agri.app.Utili.BaseFragment;
 import agri.app.databinding.FragmentAddCropBinding;
 
 import static android.support.constraint.Constraints.TAG;
 
 
-public class AddCropFragment extends Fragment {
+public class AddCropFragment extends BaseFragment {
 
     View view;
     Context mContext;
@@ -48,6 +56,11 @@ public class AddCropFragment extends Fragment {
     ArrayList<String> mDistanceMand = new ArrayList<>();
     ArrayList<String> mItemReqNam = new ArrayList<>();
     ArrayList<String> mItemReqQuan = new ArrayList<>();
+    ArrayList<Integer> mCropFarmDetails = new ArrayList<>();
+    TextView txtToolBarTitle;
+    ImageView imgToolBarBack;
+    FragmentManager manager;
+
 
     List<CropSelectItemReq> cropallItem = getCropSelectItemReqObject();
 
@@ -74,9 +87,9 @@ public class AddCropFragment extends Fragment {
         view = fragmentAddCropBinding.getRoot();
 
 
-        MainActivity activity =(MainActivity)getActivity();
+        MainActivity activity = (MainActivity) getActivity();
         posCropSelected = activity.getMyData();
-        Log.d(TAG, "onCreate: addFragcrop"+posCropSelected);
+        Log.d(TAG, "onCreate: addFragcrop" + posCropSelected);
         initView();
         initDataFields();
 
@@ -98,13 +111,16 @@ public class AddCropFragment extends Fragment {
 
     private void initView() {
         mContext = getActivity();
+        manager=getFragmentManager();
+        setToolBar("Crop Details",view);
+
     }
 
     private void initRecyclerMandiView() {
         Log.d(TAG, "initRecyclerMandiCard: card mand");
 
 
-        final RecyclerViewCropSelectedDetail cropDetailCard = new RecyclerViewCropSelectedDetail(this, mNameMand, mPriceIte, mDistanceMand,
+        final RecyclerViewCropSelectedDetail cropDetailCard = new RecyclerViewCropSelectedDetail(mContext, mNameMand, mPriceIte, mDistanceMand,
                 mNam, mImageURL, mItemReqNam, mItemReqQuan);
 
         //These two for making one view on one row at a swipe time
@@ -175,4 +191,28 @@ public class AddCropFragment extends Fragment {
         return items;
     }
 
+    @Override
+    public void setToolBar(@NotNull String name, @NotNull View view) {
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+        getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
+        txtToolBarTitle = fragmentAddCropBinding.toolbar.findViewById(R.id.txtToolbarTitle);
+        txtToolBarTitle.setText(name);
+        imgToolBarBack = fragmentAddCropBinding.toolbar.findViewById(R.id.imgToolbarHome);
+        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (getFragmentManager().getBackStackEntryCount() > 0)
+                    manager.popBackStack();
+
+
+            }
+        });
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

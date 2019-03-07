@@ -42,9 +42,11 @@
 
             android:scrollbars="none">
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="@dimen/_16sdp"
+                android:layout_margin="@dimen/_8sdp"
                 android:background="@color/white">
 
                 <LinearLayout
@@ -127,7 +129,7 @@
                             <agri.app.Customviews.HelveticaNeuBoldTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_margin="@dimen/_8sdp"
                                 android:text="Wind"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_17sdp" />
@@ -141,7 +143,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
-                                    android:layout_margin="@dimen/_5sdp"
+                                    android:layout_margin="@dimen/_8sdp"
                                     android:text="5"
                                     android:textColor="@color/black"
                                     android:textSize="@dimen/_17sdp" />
@@ -234,7 +236,7 @@
                         <agri.app.Customviews.HelveticaNeuBoldTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_margin="@dimen/_8sdp"
                             android:text="Sunrise and Sunset"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_17ssp" />
@@ -491,7 +493,7 @@
 
                     <!--</android.support.v4.widget.NestedScrollView>-->
                 </LinearLayout>
-            </RelativeLayout>
+            </android.support.v7.widget.CardView>
         </ScrollView>
 
     </LinearLayout>

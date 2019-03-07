@@ -4,25 +4,32 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
+import agri.app.MainActivity;
+import agri.app.Utili.CustomDialogCropFarm;
 import agri.app.addCropFragmentModule.AddCropFragment;
 import agri.app.R;
 
@@ -35,14 +42,16 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
     private ArrayList<String> miMandiPrice;
     private ArrayList<String> miMandiDistance;
     private ArrayList<String> miMandiItemName;
-    private AddCropFragment micontext;
+   // private AddCropFragment micontext;
     private ArrayList<String> miCropItemReqName;
     private ArrayList<String> miCropItemReqQuant;
     public Boolean isScrolled = false;
-    public Context context;
+    public Context micontext;
+    EditText input;
+//    Activity activity;
+    //CustomDialogCropFarm alert;
 
-
-    public RecyclerViewCropSelectedDetail(AddCropFragment mcontext, ArrayList<String> mMandiName, ArrayList<String> mMandiPrice,
+    public RecyclerViewCropSelectedDetail(Context mcontext, ArrayList<String> mMandiName, ArrayList<String> mMandiPrice,
                                           ArrayList<String> mMandiDistance, ArrayList<String> mMandiItemName, ArrayList<String> mImage,
                                           ArrayList<String> mCropItemReqName, ArrayList<String> mCropItemReqQuant) {
 
@@ -54,6 +63,9 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
         this.miCropItemReqName = mCropItemReqName;
         this.miCropItemReqQuant = mCropItemReqQuant;
         this.micontext = mcontext;
+
+
+
     }
 
     @NonNull
@@ -90,34 +102,50 @@ public class RecyclerViewCropSelectedDetail extends RecyclerView.Adapter<Recycle
         viewHolder.mandiItemName.setText(miMandiItemName.get(i));
 
         //Child Recycler View initialisation
-        final RecyclerViewCropDetailChild cropDetailChildre = new RecyclerViewCropDetailChild(context, miCropItemReqName,
+        final RecyclerViewCropDetailChild cropDetailChildre = new RecyclerViewCropDetailChild(micontext, miCropItemReqName,
                 miCropItemReqQuant);
 
         //These two for making one view on one row at a swipe time
-        RecyclerView.LayoutManager linearLayoutManager = new GridLayoutManager(context, 2);
+        RecyclerView.LayoutManager linearLayoutManager = new GridLayoutManager(micontext, 2);
         viewHolder.recyclerView.setLayoutManager(linearLayoutManager);
         viewHolder.recyclerView.setAdapter(cropDetailChildre);
 
         viewHolder.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder((Activity) v.getContext());
 
-                alertDialog.setTitle("Details:");
-                alertDialog.setMessage("Are you sure you want to delete this?");
-                alertDialog.setIcon(R.drawable.ic_arrow_back);
 
-                alertDialog.setPositiveButton(
-                        "Delete",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Do the stuff..
-                            }
-                        }
-                );
-            alertDialog.show();
+                CustomDialogCropFarm cdd=new CustomDialogCropFarm((Activity) micontext);
+                cdd.show();
+//
+//                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(v.getContext());
+//                alertDialog.setView(R.layout.crop_add_dialog);
+//                alertDialog.show();
 
-                Log.d(TAG, "onClick: add");
+//                AlertDialog.Builder builder = new AlertDialog.Builder(micontext);
+//                builder.setTitle("Title");
+//
+//
+//                input = new EditText(micontext);
+//                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//                builder.setView(input);
+//
+//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String m_Text = input.getText().toString();
+//                    }
+//                });
+//                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//
+//                builder.show();
+               Log.d(TAG, "onClick: add");
+
 
             }
         });

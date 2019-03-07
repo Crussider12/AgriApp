@@ -3,15 +3,19 @@ package agri.app.cropSelectionFragmentModule;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -46,13 +50,13 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
     FragmentManager manager;
     ArrayList<Integer> posCrop;
     int i;
+    String strtext;
 
     private static final String TAG = "CropSelectionFragment";
 
     public CropSelectionFragment() {
         // Required empty public constructor
     }
-
 
 
     public static CropSelectionFragment newInstance() {
@@ -66,7 +70,8 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
         // Inflate the layout for this fragment
 
 
-
+        strtext = getArguments().getString("from_fragment");
+        Log.d(TAG, "onCreateView: " + strtext);
 
         fragmentCropSelectionBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_crop_selection, container, false);
@@ -86,18 +91,20 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
                 posCrop = activity.getMyDaCr();
                 Log.d(TAG, "onCreateView: " + posCrop);
 
-                if (posCrop!=null){i = posCrop.size();}
+                if (posCrop != null) {
+                    i = posCrop.size();
+                }
 
-                if (i!= 0) {
+                if (i != 0) {
 
                     AddCropFragment addCropFragment = new AddCropFragment();
 
-                    FragmentTransaction transaction=manager.beginTransaction();
-                    transaction.replace(R.id.fragment_container,addCropFragment).addToBackStack(null).commit();
-                }else{
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.replace(R.id.fragment_container, addCropFragment).addToBackStack(null).commit();
+                } else {
 
                     Toast.makeText(getActivity(), "AddMore", Toast.LENGTH_LONG).show();
-                      Log.d(TAG, "onClick: after adition "+i);
+                    Log.d(TAG, "onClick: after adition " + i);
                 }
             }
         });
@@ -107,9 +114,9 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
 
     public void initView() {
         mContext = getActivity();
-        manager=getFragmentManager();
-        setToolBar("Crop selection",view);
-        i=0;
+        manager = getFragmentManager();
+        setToolBar("Crop selection", view);
+        i = 0;
 
     }
 
@@ -130,36 +137,53 @@ public class CropSelectionFragment extends BaseFragment implements FragmentCommu
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
-        getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
-
+        if (strtext == "add") {
+            ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+            getActivity().findViewById(R.id.navigation).setVisibility(View.GONE);
+        } else {
+            ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+            getActivity().findViewById(R.id.navigation).setVisibility(View.VISIBLE);
+        }
 
         //  setNavigationVisibility(false);
     }
 
     ArrayList<Integer> posCropSelected;
+
     @Override
     public void respond(ArrayList<Integer> position) {
         posCropSelected = position;
-        Log.d(TAG, "respond: frag"+position);
+        Log.d(TAG, "respond: frag" + position);
     }
 
 
     @Override
     public void setToolBar(@NotNull String name, @NotNull View view) {
-        txtToolBarTitle = fragmentCropSelectionBinding.toolbar.findViewById(R.id.txtToolbarTitle);
-        txtToolBarTitle.setText(name);
-        imgToolBarBack = fragmentCropSelectionBinding.toolbar.findViewById(R.id.imgToolbarHome);
-        imgToolBarBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                if (getFragmentManager().getBackStackEntryCount() > 0)
-                    manager.popBackStack();
+        if (strtext == "add") {
+            txtToolBarTitle = fragmentCropSelectionBinding.toolbar.findViewById(R.id.txtToolbarTitle);
+            txtToolBarTitle.setText(name);
+            imgToolBarBack = fragmentCropSelectionBinding.toolbar.findViewById(R.id.imgToolbarHome);
+            imgToolBarBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    if (getFragmentManager().getBackStackEntryCount() > 0)
+                        manager.popBackStack();
 
 
-            }
-        });
+                }
+            });
+        }else{
+            fragmentCropSelectionBinding.collapsingToolbar.setVisibility(View.GONE);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(name);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)fragmentCropSelectionBinding.cropAddLinLay.getLayoutParams();
+            int x = getActivity().findViewById(R.id.navigation).getHeight();
+            Log.d(TAG, "setToolBar: "+x);
+            params.setMargins(0, 0, 0, x);
+            fragmentCropSelectionBinding.cropAddLinLay.setLayoutParams(params);
+
+        }
     }
 
     @Override

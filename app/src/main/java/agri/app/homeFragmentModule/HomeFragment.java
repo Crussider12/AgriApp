@@ -146,10 +146,10 @@ public class HomeFragment extends BaseFragment implements BaseSliderView.OnSlide
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                if (dx > 0 && fragmentHomeBinding.vegArrow.getVisibility() == View.VISIBLE) {
+                if (mNam.size()<=3 && fragmentHomeBinding.vegArrow.getVisibility() == View.VISIBLE) {
                     fragmentHomeBinding.vegArrow.setVisibility(View.INVISIBLE);
 
-                } else if (dx < 0 && fragmentHomeBinding.vegArrow.getVisibility() != View.VISIBLE) {
+                } else if (mNam.size()> 3 && fragmentHomeBinding.vegArrow.getVisibility() != View.VISIBLE) {
                     fragmentHomeBinding.vegArrow.setVisibility(View.VISIBLE);
                 }
 

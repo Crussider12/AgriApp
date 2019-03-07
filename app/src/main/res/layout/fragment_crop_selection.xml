@@ -22,10 +22,12 @@
             android:background="@android:color/white"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-        <include android:id="@+id/toolbar"
-            layout="@layout/layout_common_toolbar"
-            app:layout_collapseMode="pin"/>
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/layout_common_toolbar"
+                app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
+
         <GridView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/crop_selection_grid"
             android:layout_width="match_parent"
@@ -37,18 +39,24 @@
             android:scrollbars="none"
             android:stretchMode="columnWidth" />
 
-        <Button
-            android:id="@+id/crop_selection_add"
+        <LinearLayout
+            android:id="@+id/crop_add_lin_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_30sdp"
-            android:layout_marginEnd="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_4sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:background="@drawable/button_click_effect"
-            android:text="@string/submit"
-            android:textColor="@color/white" />
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/crop_selection_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/button_click_effect"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
     </LinearLayout>
 
 </layout>

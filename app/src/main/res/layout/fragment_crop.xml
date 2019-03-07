@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_12sdp"
                     android:layout_marginBottom="@dimen/_20sdp"
-                    android:padding="@dimen/_8sdp"
+                    android:padding="@dimen/_12sdp"
                     android:layout_marginStart="@dimen/_30sdp"
                     android:layout_marginEnd="@dimen/_30sdp"
                     android:background="@drawable/button_click_effect"

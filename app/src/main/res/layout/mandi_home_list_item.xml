@@ -26,16 +26,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/temp_veg"
-            android:textSize="@dimen/text_size30" />
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20ssp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
@@ -46,21 +49,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/temp_mandi"
-                    android:textSize="@dimen/textSize26" />
+                    android:textSize="@dimen/_16ssp" />
 
                 <agri.app.Customviews.HelveticaNeuBoldTextView
                     android:id="@+id/mandi_detail_item_dist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/temp_dist"
-                    android:textSize="@dimen/text_size24" />
+                    android:textSize="@dimen/_16ssp" />
 
                 <agri.app.Customviews.HelveticaNeuBoldTextView
                     android:id="@+id/mandi_detail_item_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/temp_price"
-                    android:textSize="@dimen/text_size20" />
+                    android:textSize="@dimen/_16ssp" />
 
             </LinearLayout>
 
@@ -72,8 +75,8 @@
 
                 <ImageView
                     android:id="@+id/mandi_detail_item_image"
-                    android:layout_width="@dimen/margin200dp"
-                    android:layout_height="@dimen/margin200dp"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:scaleType="fitCenter"
                     android:src="@drawable/tomato" />
@@ -97,7 +100,7 @@
             <agri.app.Customviews.HelveticaNeuBoldTextView
                 android:id="@+id/mandi_card_details"
                 android:layout_width="wrap_content"
-                android:layout_marginBottom="@dimen/margin12"
+               android:layout_marginTop="@dimen/_16sdp"
                 android:textColor="@color/gray_dark"
                 android:layout_height="wrap_content"
                 android:baselineAlignBottom="true"

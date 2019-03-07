@@ -14,11 +14,10 @@
         tools:context=".homeFragmentModule.HomeFragment">
 
 
-
         <ScrollView
+            android:id="@+id/scrollHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/scrollHome"
             android:scrollbars="none">
 
 
@@ -104,27 +103,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/veglist"
-                    android:layout_marginStart="@dimen/margin12"
-                    android:layout_marginTop="@dimen/margin22"
-                    android:layout_marginEnd="@dimen/margin12"
-                    android:layout_marginBottom="@dimen/margin12"
-                    android:padding="@dimen/margin16"
-                    app:cardElevation="@dimen/margin4"
-                    app:cardMaxElevation="@dimen/margin4">
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp">
 
                     <LinearLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         android:orientation="vertical"
+
                         android:padding="@dimen/margin8">
 
                         <agri.app.Customviews.HelveticaNeuBoldTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:padding="@dimen/margin12"
+                            android:padding="@dimen/_8sdp"
                             android:text="@string/my_farm"
-                            android:textSize="@dimen/text_size24" />
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_20ssp" />
 
                         <LinearLayout
                             android:id="@+id/crop_detail"
@@ -156,8 +154,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="@dimen/margin12"
                                 android:layout_weight="1"
-                                android:onClick="CalendarHome"
                                 android:background="@drawable/button_click_effect"
+                                android:onClick="CalendarHome"
                                 android:padding="@dimen/margin12"
                                 android:text="@string/calendar"
                                 android:textColor="@color/white" />
@@ -170,22 +168,17 @@
                                 android:background="@drawable/button_click_effect"
                                 android:padding="@dimen/margin12"
                                 android:text="@string/diary"
-                                android:textColor="@color/white"/>
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                         <Button
-                            android:layout_width="wrap_content"
+                            android:id="@+id/home_farm_add"
+                            android:layout_width="@dimen/_150sdp"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginBottom="@dimen/margin18"
-                            android:layout_marginEnd="@dimen/margin36"
-                            android:layout_marginTop="@dimen/margin18"
-                            android:layout_marginStart="@dimen/margin18"
-                            android:onClick="CropSelectionHome"
+                            android:layout_gravity="center"
                             android:background="@drawable/button_click_effect"
                             android:gravity="center"
-                            android:id="@+id/home_farm_add"
-                            android:padding="@dimen/margin12"
+                            android:onClick="CropSelectionHome"
                             android:text="@string/add"
                             android:textColor="@color/white"
                             android:visibility="visible" />
@@ -201,9 +194,9 @@
                     android:id="@+id/mandi_rec"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
                     android:layout_below="@+id/home_farm_card"
-                    android:layout_marginTop="@dimen/margin10"
-                    android:layout_marginBottom="@dimen/margin10"
                     android:orientation="horizontal">
 
                     <android.support.v7.widget.RecyclerView
@@ -219,13 +212,12 @@
                 <android.support.v7.widget.CardView
                     android:id="@+id/weather_home"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin160dp"
+                    android:layout_height="@dimen/_140sdp"
                     android:layout_below="@+id/mandi_rec"
-                    android:layout_marginLeft="@dimen/margin16"
-                    android:layout_marginTop="@dimen/margin12"
-                    android:layout_marginRight="@dimen/margin16"
-                    android:layout_marginBottom="@dimen/margin70"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
                     android:onClick="WeatherHome"
+                    android:layout_marginBottom="@dimen/_64sdp"
                     app:cardCornerRadius="@dimen/margin4"
                     app:cardElevation="@dimen/margin4">
 
@@ -233,7 +225,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_margin="@dimen/margin16"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
                         android:orientation="horizontal">
 
                         <ImageView

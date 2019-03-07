@@ -6,6 +6,7 @@
 
     <color name="white1">#e8e8e8</color>
     <color name="line_bg">#C3C3C3</color>
+    <color name="light_gray">#BDBDBD</color>
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="button_bg">#656F6F</color>
